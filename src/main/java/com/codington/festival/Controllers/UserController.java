@@ -2,6 +2,7 @@ package com.codington.festival.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.stereotype.Controller;
 import com.codington.festival.Models.*;
 
@@ -25,8 +26,12 @@ public class UserController {
 	public UserController(UserRepository userRepo) {
 		this.userRepo = userRepo;
 	}
-
-
+	
+	@GetMapping("/login")
+	public String showLoginform() {
+		return "login";
+	}
+	
 
 	@GetMapping("/register")
 	public String showRegistrationpage(Model model) {
@@ -34,14 +39,19 @@ public class UserController {
 		return "register";
 	}
 	
-	
-
 	@PostMapping("/register")
 	public String register(User user) {
 		userRepo.save(user);
 		return "success";
 	}
 	
+	@GetMapping("/profile")
+	public String showProfile(Model model) {
+		
+//		use userRepo or create service to get logged in users profile and add "user" as a model attribute
+		
+		return "profiles";
+	}
 	
 	
 
