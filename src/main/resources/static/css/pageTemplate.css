@@ -1,0 +1,32 @@
+:root {
+	--light-tan: #EFE2BA;
+	--main-red: #F13C20;
+	--darker-blue: #4056A1;
+	--lighter-blue: #C5CBE3;
+}
+
+body {
+	background-color: var(--light-tan);
+}
+.wrapper {
+	position: relative;
+	min-height: 100vh;
+}
+
+footer {
+	background-color: var(--darker-blue);
+	text-align: center;
+	color: white;
+	height: 130px;
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+	position: absolute;
+	bottom: 0;
+}
+
+a, a:visited, a:hover {
+	text-decoration: none;
+	color: white; 
+}
+
