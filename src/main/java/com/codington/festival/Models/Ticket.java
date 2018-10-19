@@ -14,6 +14,7 @@ public class Ticket {
 	@ManyToOne(cascade = CascadeType.ALL)
 	private int user_id;
 
+
 	public int getId() {
 		return id;
 	}
