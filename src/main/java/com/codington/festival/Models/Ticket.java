@@ -11,8 +11,8 @@ public class Ticket {
 	@Column(name = "TicketNum", nullable = false, unique = true)
 	private int ticketNum;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private int user_id;
+	@OneToOne
+	private User user;
 
 
 	public int getId() {
@@ -31,13 +31,14 @@ public class Ticket {
 		this.ticketNum = ticketNum;
 	}
 
-	public int getUser_id() {
-		return user_id;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUser(User user) {
+		this.user = user;
 	}
+
 	
 	
 }

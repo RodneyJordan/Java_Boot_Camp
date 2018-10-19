@@ -1,11 +1,6 @@
 package com.codington.festival.Models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 public class ParkingPass {
 	
@@ -15,8 +10,16 @@ public class ParkingPass {
 	@Column(name = "LiscencePlate", nullable = false, unique = true)
 	private String plate;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private int user_id;
+	@OneToOne
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public int getId() {
 		return id;
@@ -34,13 +37,6 @@ public class ParkingPass {
 		this.plate = plate;
 	}
 
-	public int getUser_id() {
-		return user_id;
-	}
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
 	
 	
 }

@@ -1,11 +1,6 @@
 package com.codington.festival.Models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 public class Donation {
 	
@@ -15,8 +10,8 @@ public class Donation {
 	@Column(name = "amount", nullable = false, unique = true)
 	private double amount;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private int charity_id;
+	@OneToOne
+	private int charity;
 
 	public int getId() {
 		return id;
@@ -34,13 +29,14 @@ public class Donation {
 		this.amount = amount;
 	}
 
-	public int getCharity_id() {
-		return charity_id;
+	public int getCharity() {
+		return charity;
 	}
 
-	public void setCharity_id(int charity_id) {
-		this.charity_id = charity_id;
+	public void setCharity(int charity) {
+		this.charity = charity;
 	}
+
 	
 	
 }
