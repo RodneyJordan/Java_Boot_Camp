@@ -7,22 +7,27 @@
 
 body {
 	background-color: var(--light-tan);
+	height: 100%:
 }
 .wrapper {
-	position: relative;
-	min-height: 100vh;
+	min-height: 50vh;
 }
 
 footer {
+	margin-top:8%;
 	background-color: var(--darker-blue);
 	text-align: center;
 	color: white;
 	height: 130px;
 	width: 100%;
-	margin: 0;
-	padding: 20px;
-	position: absolute;
-	bottom: 0;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.contact{
+	margin-top:10%;
 }
 
 a, a:visited, a:hover {
