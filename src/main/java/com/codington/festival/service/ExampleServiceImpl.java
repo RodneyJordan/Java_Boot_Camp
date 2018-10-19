@@ -1,4 +1,4 @@
-package com.codington.service;
+package com.codington.festival.service;
 
 import java.util.List;
 
@@ -7,12 +7,12 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.codington.example.Example;
-import com.codington.example.ExampleDAO;
+import com.codington.festival.example.Example;
+import com.codington.festival.example.ExampleDAO;
 
 @Transactional
 @Component
-public class ExampleService {
+public class ExampleServiceImpl implements ExampleFacade {
 	
 	@Autowired
 	private ExampleDAO exampleDAO;

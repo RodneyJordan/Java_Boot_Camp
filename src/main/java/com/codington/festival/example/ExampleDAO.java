@@ -1,4 +1,4 @@
-package com.codington.example;
+package com.codington.festival.example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.codington.controller.ExampleController;
+import com.codington.festival.controller.ExampleController;
 
 @Component
 public class ExampleDAO {
@@ -30,11 +30,13 @@ public class ExampleDAO {
 			PersistenceException {
 		Query query = entityManager.createQuery("SELECT e from Example e");
 		List exampleList = (ArrayList<Example>) query.getResultList();
+		Example e =new Example();
+		e.setName("yoyo");
+		exampleList.add(e);
 		if(exampleList.isEmpty()){
 			LOGGER.info("No events");
-			throw new NoResultException("No events");
+			throw new NoResultException("No examples");
 		}
-
 		return exampleList;
 	}
 }

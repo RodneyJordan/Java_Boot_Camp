@@ -1,4 +1,4 @@
-package com.codington.example;
+package com.codington.festival.example;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
