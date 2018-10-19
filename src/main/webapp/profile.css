@@ -1,0 +1,40 @@
+@charset "ISO-8859-1";
+/* Colors
+* background-color: #EFE2BA;
+* background-color: #F13C20;
+* background-color: #4056A1;
+* background-color: #C5CBE3;
+*/
+
+body {
+	
+	background-color: #EFE2BA;
+}
+
+button {
+	margin-bottom: 10px;
+}
+
+.holder-box {
+	border: 1px solid black;
+	border-radius: 15px;
+	margin-top: 15px;
+	height: 300px;
+	background-color: #C5CBE3;
+}
+
+.holder-box h2 {
+	text-align: center;
+}
+
+
+input {
+	height: 25px;
+	width: 25px;
+	border-radius: 15px;
+}
+
+#license_add_sub {
+	height: 25px;
+	width: 50%;
+}
