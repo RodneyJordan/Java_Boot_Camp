@@ -3,7 +3,7 @@ package com.codington.festival.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
+//@Table(name = "user")
 public class User {
 	
 	@Id
@@ -21,8 +21,6 @@ public class User {
 	
 	@Column(nullable = false)
 	private String password;
-	
-	
 	
 	public User() {
 		

@@ -3,7 +3,7 @@ package com.codington.festival.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Tickets")
+//@Table(name = "ticket")
 public class Ticket {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -12,8 +12,8 @@ public class Ticket {
 	private int ticketNum;
 	
 	@OneToOne
+    @MapsId
 	private User user;
-
 
 	public int getId() {
 		return id;

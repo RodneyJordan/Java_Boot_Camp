@@ -2,6 +2,8 @@ package com.codington.festival.Models;
 
 import javax.persistence.*;
 
+@Entity
+//@Table(name = "donation")
 public class Donation {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,7 +13,8 @@ public class Donation {
 	private double amount;
 	
 	@OneToOne
-	private int charity;
+    @MapsId
+	private Charity charity;
 
 	public int getId() {
 		return id;
@@ -29,11 +32,11 @@ public class Donation {
 		this.amount = amount;
 	}
 
-	public int getCharity() {
+	public Charity getCharity() {
 		return charity;
 	}
 
-	public void setCharity(int charity) {
+	public void setCharity(Charity charity) {
 		this.charity = charity;
 	}
 
