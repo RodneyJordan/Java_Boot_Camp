@@ -1,3 +1,7 @@
+body{
+	height:100vh;
+}
+
 .login-form {
 	background-color: var(--darker-blue);
 	padding: 20px;
