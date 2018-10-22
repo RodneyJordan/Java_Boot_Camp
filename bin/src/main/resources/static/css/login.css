@@ -1,0 +1,14 @@
+body{
+	height:100vh;
+}
+
+.login-form {
+	background-color: var(--darker-blue);
+	padding: 20px;
+	width: 60%;
+	margin: 40px auto 0 auto;
+	border-radius: 20px;
+	box-shadow: 0 4px 10px black;
+	color: white;
+}
+
