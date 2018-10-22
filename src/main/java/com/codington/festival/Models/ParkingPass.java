@@ -2,6 +2,8 @@ package com.codington.festival.Models;
 
 import javax.persistence.*;
 
+@Entity
+//@Table(name = "parkingpass")
 public class ParkingPass {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,6 +13,8 @@ public class ParkingPass {
 	private String plate;
 	
 	@OneToOne
+//	@JoinColumn(name = "user_id")
+    @MapsId
 	private User user;
 
 	public User getUser() {

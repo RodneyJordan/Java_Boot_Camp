@@ -1,12 +1,14 @@
 package com.codington.festival.Models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+//@Table(name = "vendor")
 public class Vendor {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -17,7 +19,7 @@ public class Vendor {
 	@Column(name = "email", nullable = false, unique = true)
 	private String email;
 	
-	@Column(name = "phone#", nullable = false, unique = true)
+	@Column(name = "phone", nullable = false, unique = true)
 	private String phone;
 	
 	@Column(name = "URL", nullable = false, unique = true)
