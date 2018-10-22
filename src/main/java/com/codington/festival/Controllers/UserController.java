@@ -19,7 +19,7 @@ public class UserController {
 		this.userRepo = userRepo;
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/dumb")
 	public String showLoginform() {
 		return "login";
 	}
