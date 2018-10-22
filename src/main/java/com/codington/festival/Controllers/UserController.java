@@ -37,11 +37,14 @@ public class UserController {
 	}
 
 	@GetMapping("/profile")
-	public String showProfile(Model model) {
+	public String showProfile() {
+		return "profile";
 
-//		use userRepo or create service to get logged in users profile and add "user" as a model attribute
-
-		return "profiles";
 	}
-
+	
+	@GetMapping("/")
+	public String showIndex() {
+		return "index";
+	}
+		
 }

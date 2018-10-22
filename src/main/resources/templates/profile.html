@@ -3,7 +3,8 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/pageTemplate.css">
+    <link rel="stylesheet" href="../css/variables.css">
+	<link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,9 +26,83 @@
     </ul>
   </div>
 </nav>
-<div class="wrapper">
     <section>
-        Make several sections for page content as needed
+        <div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Welcome, Insert Dynamic Username Here</h1>
+		</div>
+	</div>
+</div>
+
+<div class="container holder-box">
+	<div class="row">
+		<div class="col">
+			<h2>Current Tickets</h2>		
+		</div>
+	</div>
+</div>
+
+<div class="container holder-box" id="add_tickets">
+	<div class="row">
+		<div class="col">
+			<h2>Manage Tickets</h2>		
+		</div>
+	</div>
+	<form>
+		<div class="row">
+			<div class="col">
+				<p style="text-align:center">You have <number> of tickets available: <span><input id="ticket_add_sub"></input></span></p>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="mx-auto">
+				<button type="button" class="btn btn-outline-primary">Add Ticket</button>		
+			</div>
+			<div class="mx-auto">
+				<button type="button" class="btn btn-outline-primary">Remove Ticket</button>		
+			</div>
+		</div>
+		<div>
+			<div class="row">
+				<div class="mx-auto">
+					<button type="button" class="btn btn-outline-primary text-center">Submit Request</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="container holder-box">
+	<div class="row">
+		<div class="col">
+			<h2>Parking Pass</h2>		
+		</div>
+	</div>
+</div>
+
+<div class="container holder-box">
+	<div class="row">
+		<div class="col">
+			<h2>Add Parking Pass</h2>		
+		</div>
+	</div>
+	<form>
+		<div class="row">
+			<div class="col">
+				<p style="text-align:center; text:bold">Input license plate #:<p> 
+				<p style="text-align:center"><input class="mx-auto" id="license_add_sub"></input></p>		
+			</div>
+		</div>
+		<div>
+			<div class="row">
+				<div class="mx-auto">
+					<button type="button" class="btn btn-outline-primary text-center">Submit Request</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
     </section>
     <footer>
         <div clas="contact">
@@ -36,7 +111,6 @@
             <p>7050 Fairgrounds Pkwy San Antonio, Texas</p>
         </div>
     </footer>
-</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
