@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.UserRepository;
 
-//import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
-
 @Controller
 public class UserController {
 	
