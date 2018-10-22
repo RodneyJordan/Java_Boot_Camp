@@ -43,8 +43,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/profile")
-	public String profile() {
+	public String showProfile() {
 		return "profile";
+	}
+	
+	@GetMapping("/")
+	public String showIndex() {
+		return "index";
 	}
 	
 	
