@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.UserRepository;
 
-import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
+//import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 @Controller
 public class UserController {
@@ -46,15 +46,15 @@ public class UserController {
 	}
 	
 	@GetMapping("/profile")
-	public String showProfile(Model model) {
-		
-//		use userRepo or create service to get logged in users profile and add "user" as a model attribute
-		
-		return "profiles";
+	public String showProfile() {
+		return "profile";
+
 	}
 	
-	
-
+	@GetMapping("/")
+	public String showIndex() {
+		return "index";
+	}
 	
 	
 }
