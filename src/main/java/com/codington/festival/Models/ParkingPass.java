@@ -9,7 +9,7 @@ public class ParkingPass {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "LiscencePlate", nullable = false, unique = true)
+	@Column(name = "LicensePlate", nullable = false, unique = true)
 	private String plate;
 	
 	@OneToOne
