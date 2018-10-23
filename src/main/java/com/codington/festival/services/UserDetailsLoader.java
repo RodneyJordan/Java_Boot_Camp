@@ -1,7 +1,6 @@
 package com.codington.festival.services;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,14 +12,11 @@ import com.codington.festival.Repositories.Users;
 
 @Service
 public class UserDetailsLoader implements UserDetailsService {
-	
-	@Autowired
-	 private //final
-	 Users users;
+	 private final Users users;
 
-/*	    public UserDetailsLoader(Users users) {
+	    public UserDetailsLoader(Users users) {
 	        this.users = users;
-	    }*/
+	    }
 
 	    @Override
 	    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
