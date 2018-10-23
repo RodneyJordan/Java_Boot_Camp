@@ -27,7 +27,7 @@ public class UserController {
 	@GetMapping("/register")
 	public String showRegistrationpage(Model model) {
 		model.addAttribute("user", new User());
-		return "register";
+		return "registration";
 	}
 
 	@PostMapping("/register")
@@ -44,12 +44,11 @@ public class UserController {
 	
 	@GetMapping("/")
 	public String showIndex() {
-		return "index";
+		return "login";
 	}
 		
 }*/
 package com.codington.festival.Controllers;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -74,7 +73,7 @@ public class UserController {
     @GetMapping("/register")
     public String showSignupForm(Model model){
         model.addAttribute("user", new User());
-        return "register";
+        return "registration";
     }
 
     @PostMapping("/register")
