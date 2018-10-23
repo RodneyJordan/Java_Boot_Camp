@@ -27,7 +27,7 @@ public class UserController {
 	@GetMapping("/register")
 	public String showRegistrationpage(Model model) {
 		model.addAttribute("user", new User());
-		return "register";
+		return "registration";
 	}
 
 	@PostMapping("/register")
@@ -44,7 +44,7 @@ public class UserController {
 	
 	@GetMapping("/")
 	public String showIndex() {
-		return "index";
+		return "login";
 	}
 		
 }
