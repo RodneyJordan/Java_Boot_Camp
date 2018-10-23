@@ -34,22 +34,22 @@
 	        
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			    <input  th:field="*{email}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 			  </div>
 			  
 			  <div class="form-group">
 			    <label for="firstName">First name</label>
-			    <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+			    <input  th:field="first_name"  type="text" class="form-control" id="firstName" placeholder="Enter first name">
 			  </div>
 			  
 			  <div class="form-group">
 			    <label for="lasstName">Last name</label>
-			    <input type="text" class="form-control" id="lastName" placeholder="Enter lat name">
+			    <input  th:field="*{last_name}"  type="text" class="form-control" id="lastName" placeholder="Enter lat name">
 			  </div>
 			  
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			    <input  th:field="*{password}"  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			  </div>
 			  
 			  
