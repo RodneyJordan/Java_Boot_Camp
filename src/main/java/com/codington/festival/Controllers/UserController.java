@@ -49,7 +49,6 @@ public class UserController {
 		
 }*/
 package com.codington.festival.Controllers;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -74,7 +73,7 @@ public class UserController {
     @GetMapping("/register")
     public String showSignupForm(Model model){
         model.addAttribute("user", new User());
-        return "register";
+        return "registration";
     }
 
     @PostMapping("/register")
