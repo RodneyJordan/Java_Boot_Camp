@@ -25,6 +25,12 @@ public class User {
 	public User() {
 		
 	}
+	
+	 public User(User copy) {
+	        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+	        email = copy.email;
+	        password = copy.password;
+	    }
 
 	public User(String first_name,String last_name,String email, String password) {
 		this.first_name = first_name;
