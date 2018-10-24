@@ -1,15 +1,12 @@
 package com.codington.festival.Controllers;
 
-import java.math.BigInteger;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,31 +16,10 @@ import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.TicketRepository;
 import com.codington.festival.Repositories.Users;
 
-import antlr.collections.List;
-
-import java.util.Random;
-
 @Controller
 public class TicketController {
 	
 	private TicketRepository ticketRepo;
-	
-	@PostMapping("/refundTickets")
-	public String deleteTicket(@RequestParam(name = "numOfTickets") String tickets, Model model) {
-		int ticketsToDelete = Integer.parseInt(tickets);
-		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		int totalTickets = ticketRepo.getTotalTickets(currentUser.getId());
-		if (ticketsToDelete <= 0 || (totalTickets - ticketsToDelete) < 0) {
-			model.addAttribute("negativeNum", true);
-		} else {
-			List<BigInteger> idsToDelete = ticketRepo.getTicketIds(currentUser.getId(), ticketsToDelete);
-			idsToDelete.forEach(t -> ticketRepo.deleteTicket(t));
-			model.addAttribute("numDeleted", tickets);
-		}
-		
-		return "profile";
-	}
-
 	private Users userRepo;
 	
 	public TicketController(TicketRepository ticketRepo, Users userRepo) {
@@ -62,13 +38,14 @@ public class TicketController {
 	public String buyTickets(
 			@RequestParam(name = "ticket_add_sub") int number) {
 			System.out.println(number);
+			System.out.println(ticketRepo.findAllById(1).size());
 			User current = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			ArrayList<Ticket> tickets = new ArrayList<Ticket>();
 			for (int i = 1; i <= number; i++) {
 				String rand = UUID.randomUUID().toString();
 				Ticket ticket = new Ticket();		
 				ticket.setUser(current);
-				ticket.setId(current.getId());
+//				ticket.setId(current.getId());
 				ticket.setTicketNum(rand);
 				tickets.add(ticket);			
 			}
