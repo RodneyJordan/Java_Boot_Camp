@@ -36,12 +36,12 @@ public class TicketController {
 	
 	@PostMapping("/profile")
 	public String buyTickets(
-			@RequestParam(name = "ticket_add_sub") int number,
-			@RequestParam(name = "user") User user) {
+			@RequestParam(name = "ticket_add_sub") int number) {
+			User current = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 			for (int i = number; i < number; i++) {
 				Ticket ticket = new Ticket();
 				Random rand = new Random();
-				ticket.setUser(user);
+				ticket.setUser(current);
 				ticket.setTicketNum(rand.nextInt(25) + 1);
 			}
 			
