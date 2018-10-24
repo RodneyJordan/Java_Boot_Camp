@@ -20,6 +20,7 @@ public class UserService {
 	
 	   public User currentUser() {
 	        return  (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	        
 	    }
 	   
 	   public boolean isLoggedIn() {
