@@ -7,7 +7,6 @@ import com.codington.festival.Models.*;
 
 
 @Repository
-public interface Users extends CrudRepository<User,Integer> {
+public interface Users extends CrudRepository<User,Long> {
 	User findByEmail(String email);
-	
 }
