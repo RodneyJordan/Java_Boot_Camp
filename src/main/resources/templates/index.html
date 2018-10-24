@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -7,20 +7,21 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Codington Festival</a>
+  <a class="navbar-brand" th:href="@{/}">Codington Festival</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+        <a class="nav-link" th:href="@{/login}">Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/register">Register</a>
+        <a class="nav-link" th:href="@{/register}">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Information</a>
+
+        <a class="nav-link" th:href="@{/}">Info</a>
       </li>
     </ul>
   </div>
@@ -43,7 +44,7 @@
 					sponsors all dedicated to the future prosperity of New Codington and the happiness of its citizens.
 					</p>
 					<p>
-					Along with reserving your ticket for this historic event, you are encouraged (but not obligated) to provide a 
+					Along with reserving you ticket for this historic event, you are encouraged (but not obligated) to provide a 
 					small donation to help provide for the city's new transition, funds raised will go to different local projects 
 					like stimulating local businesses and cleaning up our beloved river. So please give from your heart and enjoy the 
 					Festival!  
@@ -61,7 +62,7 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<p>To celebrate the unity of Northtown and Southtown, the New Codington Festival is proud to offer the following
+					<p>To celebrate the unity of North Town and South Town, the New Codington Festival is proud to offer the following
 					events:
 					</p>
 				</div>
@@ -70,7 +71,7 @@
 				<div class="col">
 					<p>
 					<img src="../img/celphant.jpg" alt="" class="float-left" style="margin-right: 15px; margin-bottom: 15px" height=150px; width=150px;/>
-					<b>Elephant Rides*:</b> We are excited to say that Garbozo, Northtown Zoo's famous elephant, is no longer just eye-candy.
+					<b>Elephant Rides*:</b> We are excited to say that Garbozo, North Town Zoo's famous elephant, is no longer just eye-candy.
 					Elephant rides will be offered all-day for children and adults. 
 					</p>
 					<p>
@@ -113,7 +114,7 @@
 				<div class="col">
 					<p>	
 					<img src="../img/carnival.jpg" alt="" class="float-left" style="margin-right: 15px; margin-bottom: 15px" height=150px; width=150px;/>
-					<b>Carnival Style Rides:</b> Looking for a little excitement? Come take a spin on any one of our fabulous carnival rides.
+					<b>Carnival Style Rides:</b> Looking for a little excitement? Come take a spin on any one of our faboulous carnival rides.
 					Don't worry, they are supposed to make those noises.
 					</p>
 				</div>
@@ -145,18 +146,18 @@
 					
 					      <!-- Modal body -->
 					      <div class="modal-body">
-					        <form action="https://formspree.io/swantiffany.williams@accenturefederal.com" method="POST" name="vendor_form">
+					        <form action="" method="POST" name="vendor_form">
 								<label for="vendor_form">Vendor Name:
-									<input type="text" name="vendor_form" />
+									<input type="text" />
 								</label>
 								<label for="vendor_form">Vendor Email:
-									<input type="text" name="vendor_form" />
+									<input type="text" />
 								</label>
 								<label for="vendor_form">Vendor Phone:
-									<input type="text" name="vendor_form" />
+									<input type="text" />
 								</label>
 								<label for="vendor_form">Vendor URL:
-									<input type="text" name="vendor_form" />
+									<input type="text" />
 								</label><br>
 								<button>Submit</button>
 							</form>
@@ -219,18 +220,18 @@
 					
 					      <!-- Modal body -->
 					      <div class="modal-body">
-					        <form action="https://formspree.io/swantiffany.williams@accenturefederal.com" method="POST" name="sponsor_form">
+					        <form action="" method="POST" name="sponsor_form">
 								<label for="sponsor_form">Company Name:
-									<input type="text" name="sponsor_form" />
+									<input type="text" />
 								</label>
 								<label for="sponsor_form">Sponsorship Amount:
-									<input type="text" name="sponsor_form" />
+									<input type="text" />
 								</label>
 								<label for="sponsor_form">Contact Name:
-									<input type="text" name="sponsor_form" />
+									<input type="text" />
 								</label>
 								<label for="sponsor_form">Contact Number:
-									<input type="text" name="sponsor_form" />
+									<input type="text" />
 								</label><br>
 								<button>Submit</button>
 							</form>
