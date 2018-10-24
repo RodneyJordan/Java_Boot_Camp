@@ -10,10 +10,10 @@ public class User {
     @GeneratedValue
     private Long id;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String first_name;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String last_name;
 	
 	@Column(nullable = false, unique = true)
@@ -30,6 +30,8 @@ public class User {
 	        id = copy.id;
 	        email = copy.email;
 	        password = copy.password;
+	        first_name = copy.first_name;
+	        last_name = copy.last_name;
 	    }
 
 	public User(String first_name,String last_name,String email, String password) {

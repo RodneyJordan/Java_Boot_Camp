@@ -54,7 +54,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
                 .authorizeRequests()
                 .antMatchers(
-                    "/success"
+                    "/profile"
                 )
                 .authenticated()
         ;

@@ -1,10 +1,12 @@
 package com.codington.festival.Controllers;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.Users;
 import com.codington.festival.services.UserService;
 
@@ -24,11 +26,7 @@ public class ProfileController {
 	
 	@GetMapping("/profile")
 	public String showUserProfile(Model model) {
-		if(userSvc.isLoggedIn()) {
-		model.addAttribute("user", userSvc.currentUser());
-		}
+		model.addAttribute("name", userSvc.currentUser().getFirst_name());
 		return "profile";
 	}
-	
-	
 }
