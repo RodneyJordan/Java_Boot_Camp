@@ -1,6 +1,8 @@
 package com.codington.festival.Controllers;
 
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.UUID;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,8 @@ import com.codington.festival.Models.Ticket;
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.TicketRepository;
 import com.codington.festival.Repositories.Users;
+
+import antlr.collections.List;
 
 import java.util.Random;
 
@@ -34,17 +38,24 @@ public class TicketController {
 		return "ticketbuy";
 	}
 	
-	@PostMapping("/profile")
+	@PostMapping("/ticketbuy")
 	public String buyTickets(
 			@RequestParam(name = "ticket_add_sub") int number) {
+			System.out.println(number);
 			User current = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-			for (int i = number; i < number; i++) {
-				Ticket ticket = new Ticket();
-				Random rand = new Random();
+			ArrayList<Ticket> tickets = new ArrayList<Ticket>();
+			for (int i = 1; i <= number; i++) {
+				String rand = UUID.randomUUID().toString();
+				Ticket ticket = new Ticket();		
+				ticket.setUser(current);
 				ticket.setId(current.getId());
-				ticket.setTicketNum(rand.nextInt(25) + 1);
+				ticket.setTicketNum(rand);
+				tickets.add(ticket);			
 			}
-			
+
+			for (Ticket tick : tickets) {
+				ticketRepo.save(tick);
+			}	
 		return "redirect:/profile";
 	}
 }

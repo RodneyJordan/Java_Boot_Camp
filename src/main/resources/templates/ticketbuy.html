@@ -35,18 +35,18 @@
 				<div class="row">
 					<div class="col">
 						Max of 10 tickets per user
-						<form action="/ticketbuy" method="POST">
-							<select name="cars">
-								<option value="1" name = "ticket_add_sub">1</option>
-								<option value="2" name = "ticket_add_sub">2</option>
-								<option value="3" name = "ticket_add_sub">3</option>
-								<option value="4" name = "ticket_add_sub">4</option>
-								<option value="5" name = "ticket_add_sub">5</option>
-								<option value="6" name = "ticket_add_sub">6</option>
-								<option value="7" name = "ticket_add_sub">7</option>
-								<option value="8" name = "ticket_add_sub">8</option>
-								<option value="9" name = "ticket_add_sub">9</option>
-								<option value="10" name = "ticket_add_sub">10</option>
+						<form th:action="@{/ticketbuy}" method="POST">
+							<select name="ticket_add_sub">
+								<option value= 1>1</option>
+								<option value= 2>2</option>
+								<option value= 3>3</option>
+								<option value= 4>4</option>
+								<option value= 5>5</option>
+								<option value= 6>6</option>
+								<option value= 7>7</option>
+								<option value= 8>8</option>
+								<option value= 9>9</option>
+								<option value= 10>10</option>
 								<input type="submit" value="reserve">
 							</select>
 						</form>
