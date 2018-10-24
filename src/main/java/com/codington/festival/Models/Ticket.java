@@ -6,28 +6,29 @@ import javax.persistence.*;
 //@Table(name = "ticket")
 public class Ticket {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(name = "TicketNum", nullable = false, unique = true)
-	private int ticketNum;
+	private String ticketNum;
 	
-	@OneToOne
-    @MapsId
+	@ManyToOne
+	@JoinColumn(name = "user_id")
 	private User user;
+	
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(Long long1) {
+		this.id = long1;
 	}
 
-	public int getTicketNum() {
+	public String getTicketNum() {
 		return ticketNum;
 	}
 
-	public void setTicketNum(int ticketNum) {
+	public void setTicketNum(String ticketNum) {
 		this.ticketNum = ticketNum;
 	}
 
