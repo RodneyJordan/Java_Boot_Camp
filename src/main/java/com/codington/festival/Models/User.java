@@ -6,9 +6,9 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+    @Id
+    @GeneratedValue
+    private Long id;
 	
 	@Column(nullable = false, unique = true)
 	private String first_name;
@@ -27,7 +27,7 @@ public class User {
 	}
 	
 	 public User(User copy) {
-	        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+	        id = copy.id;
 	        email = copy.email;
 	        password = copy.password;
 	    }
@@ -39,7 +39,7 @@ public class User {
 		this.password = password;
 	}
 	
-	public User(int id,String first_name,String last_name,String email, String password) {
+	public User(Long id,String first_name,String last_name,String email, String password) {
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -47,11 +47,11 @@ public class User {
 		this.password = password;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
