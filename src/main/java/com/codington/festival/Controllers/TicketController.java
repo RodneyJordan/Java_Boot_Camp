@@ -12,16 +12,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.codington.festival.Models.Ticket;
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.TicketRepository;
-import com.codington.festival.Repositories.UserRepository;
+import com.codington.festival.Repositories.Users;
+
 import java.util.Random;
 
 @Controller
 public class TicketController {
 	
 	private TicketRepository ticketRepo;
-	private UserRepository userRepo;
+	private Users userRepo;
 	
-	public TicketController(TicketRepository ticketRepo, UserRepository userRepo) {
+	public TicketController(TicketRepository ticketRepo, Users userRepo) {
 		this.ticketRepo = ticketRepo;
 		this.userRepo = userRepo;
 	}
