@@ -2,6 +2,7 @@ package com.codington.festival.services;
 
 import java.util.Optional;
 
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +18,14 @@ public class UserService {
 		this.users = users;
 	}
 	
-	   public Optional<User> currentUser(){
-	        User user =  (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-	        return users.findById(user.getId());
+	   public User currentUser() {
+	        return  (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    }
+	   
+	   public boolean isLoggedIn() {
+	        boolean isAnonymousUser =
+	                SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken;
+	        return ! isAnonymousUser;
 	    }
 
 }
