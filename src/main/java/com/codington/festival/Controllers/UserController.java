@@ -1,4 +1,3 @@
-
 package com.codington.festival.Controllers;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
