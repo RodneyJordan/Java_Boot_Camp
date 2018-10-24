@@ -6,7 +6,7 @@ import javax.persistence.*;
 //@Table(name = "ticket")
 public class Ticket {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(name = "TicketNum", nullable = false, unique = true)
 	private int ticketNum;
@@ -15,12 +15,12 @@ public class Ticket {
     @MapsId
 	private User user;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(Long long1) {
+		this.id = long1;
 	}
 
 	public int getTicketNum() {
