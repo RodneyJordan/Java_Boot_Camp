@@ -1,19 +1,30 @@
 package com.codington.festival.Models;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.codington.festival.Models.Ticket;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+    @Id
+    @GeneratedValue
+    private Long id;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String first_name;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String last_name;
 	
 	@Column(nullable = false, unique = true)
@@ -22,14 +33,21 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List <Ticket> tickets;
+	
+	
 	public User() {
 		
 	}
 	
 	 public User(User copy) {
-	        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+	        id = copy.id;
 	        email = copy.email;
 	        password = copy.password;
+	        first_name = copy.first_name;
+	        last_name = copy.last_name;
 	    }
 
 	public User(String first_name,String last_name,String email, String password) {
@@ -39,7 +57,7 @@ public class User {
 		this.password = password;
 	}
 	
-	public User(int id,String first_name,String last_name,String email, String password) {
+	public User(Long id,String first_name,String last_name,String email, String password) {
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -47,11 +65,11 @@ public class User {
 		this.password = password;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
