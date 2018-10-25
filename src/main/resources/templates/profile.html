@@ -28,6 +28,8 @@
 		    </ul>
 		  </div>
 		</nav>
+		<p th:if="${negativeNum == true}">Please enter a valid amount of tickets to delete</p>
+		<p th:if="${numDeleted != null}">You Deleted <span th:text="${numDeleted}"></span> tickets</p>
 		
 		
     <section>
@@ -68,7 +70,13 @@
 		</div>
 	</form>
 </div>
-
+<div>
+	<form th:action="@{/refundTickets}" th:method="post">
+		How many tickets would you like to delete?
+		<input type="text" name="numOfTickets" />
+		<button type="submit">Submit</button>
+	</form>
+</div>
 <div class="container holder-box">
 	<div class="row">
 		<div class="col">

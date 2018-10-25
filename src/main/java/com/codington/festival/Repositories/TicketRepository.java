@@ -29,5 +29,18 @@ public interface TicketRepository extends CrudRepository<Ticket, Long> {
 	
 	@Query(value = "SELECT count(*) FROM ticket", nativeQuery = true)
 	int getTotalSoldGlobally();
+	
+	@Query(value = "SELECT count(*) FROM ticket WHERE user_id = ?1", nativeQuery = true)
+	int getTicketsPerUser(long userId);
+	
+	
+	
+	@Query(value = "SELECT id FROM ticket WHERE user_id = ?1 LIMIT ?2", nativeQuery = true)
+    List<BigInteger> getTicketIds(long userId, int limit);
+	
+	 @Transactional
+	 @Modifying
+	 @Query(value = "DELETE FROM ticket WHERE id = ?1", nativeQuery = true)
+	 void deleteTicket(BigInteger ticketId);
 
 }
