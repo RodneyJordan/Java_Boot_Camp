@@ -40,18 +40,23 @@ public class TicketController {
 			@RequestParam(name = "ticket_add_sub") int number) {
 			User current = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			ArrayList<Ticket> tickets = new ArrayList<Ticket>();
-			for (int i = 1; i <= number; i++) {
-				String rand = UUID.randomUUID().toString();
-				Ticket ticket = new Ticket();		
-				ticket.setUser(current);
-//				ticket.setId(current.getId());
-				ticket.setTicketNum(rand);
-				tickets.add(ticket);			
+			if (number <= 10 - ticketRepo.ticketNumber(current.getId())) {
+				for (int i = 1; i <= number; i++) {
+					String rand = UUID.randomUUID().toString();
+					Ticket ticket = new Ticket();		
+					ticket.setUser(current);
+					ticket.setTicketNum(rand);
+					tickets.add(ticket);			
+				}
+	
+				for (Ticket tick : tickets) {
+					System.out.println(tick);
+					ticketRepo.save(tick);
+				}	
+			} else {
+		return	"redirect:/profile";
 			}
-
-			for (Ticket tick : tickets) {
-				ticketRepo.save(tick);
-			}	
+			
 		return "redirect:/profile";
 	}
 	

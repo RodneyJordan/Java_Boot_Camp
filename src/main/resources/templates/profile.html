@@ -53,9 +53,9 @@
 	<form>
 		<div class="row">
 			<div class="col">
-				<p style="text-align:center">You have <number> of tickets available: <span><input id="ticket_add_sub"></input></span></p>		
+				<p style="text-align:center">You have tickets available: <span><input th:value="${ticketNumber}" id="ticket_add_sub"></input></span></p>		
 			</div>
-		</div>
+		</div>	
 		<div class="row">
 			<div class="mx-auto">
 				<a href="#"><button type="button" class="btn btn-outline-primary">Add Ticket</button></a>	
@@ -69,6 +69,11 @@
 			</div>
 		</div>
 	</form>
+	<div class="row" th:each="ticket : ${showTickets}">
+		<div class="col">	
+			<p><span>Ticket ID: </span><span th:text="${ticket.ticketNum}"></span></p>			
+		</div>
+	</div>
 </div>
 <div>
 	<form th:action="@{/refundTickets}" th:method="post">
