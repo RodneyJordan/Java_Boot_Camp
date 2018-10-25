@@ -40,6 +40,8 @@
             </form>
 		  </div>
 		</nav>
+		<p th:if="${negativeNum == true}">Please enter a valid amount of tickets to delete</p>
+		<p th:if="${numDeleted != null}">You Deleted <span th:text="${numDeleted}"></span> tickets</p>
 		
 		
     <section>
@@ -65,7 +67,7 @@
 			<div class="col">
 				<p style="text-align:center">You have <span th:text="${tickets}"></span> of tickets available</p>		
 			</div>
-		</div>
+		</div>	
 		<div class="row">
 			<div class="mx-auto">
 				<a th:href="@{/ticketbuy}"><button type="button" class="btn btn-outline-primary">Add Ticket</button></a>	
@@ -79,8 +81,19 @@
 			</div>
 		</div>
 	</form>
+	<div class="row" th:each="ticket : ${showTickets}">
+		<div class="col">	
+			<p><span>Ticket ID: </span><span th:text="${ticket.ticketNum}"></span></p>			
+		</div>
+	</div>
 </div>
-
+<div>
+	<form th:action="@{/refundTickets}" th:method="post">
+		How many tickets would you like to delete?
+		<input type="text" name="numOfTickets" />
+		<button type="submit">Submit</button>
+	</form>
+</div>
 <div class="container holder-box">
 	<div class="row">
 		<div class="col">
@@ -95,7 +108,7 @@
     <footer>
         <div clas="contact">
             <h6><a href="https://www.google.com/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiD9rfl6JLeAhUMOawKHYeSDYIQ_AUIDigB&biw=1191&bih=600#imgrc=hM7lHKPVzV8OWM:">Contact Us</a></h6>
-            <h6><a href="twitter.com">Follow us on Twitter     <i class="fa fa-twitter-square" style="font-size:24px"></i></a></h6>
+            <h6><a href="https://twitter.com/CodingtonAlive">Follow us on Twitter     <i class="fa fa-twitter-square" style="font-size:24px"></i></a></h6>
             <p>7050 Fairgrounds Pkwy San Antonio, Texas</p>
         </div>
     </footer>

@@ -23,12 +23,17 @@ public class ProfileController {
         this.users = users;
         this.passwordEncoder = passwordEncoder;
         this.userSvc = userSvc;
+        this.ticketRepo = ticketRepo;
     }
 	
 	@GetMapping("/profile")
 	public String showUserProfile(Model model) {
 		model.addAttribute("loggedIn", userSvc.isLoggedIn());
 		model.addAttribute("name",userSvc.currentUser().getFirst_name());
+		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		model.addAttribute("name", userSvc.currentUser().getFirst_name());
+		model.addAttribute("ticketNumber", 10 - ticketRepo.ticketNumber(currentUser.getId()));
+		model.addAttribute("showTickets", ticketRepo.findAllById(currentUser.getId()));
 		return "profile";
 	}
 }
