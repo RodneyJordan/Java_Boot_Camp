@@ -56,6 +56,9 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	private List <Ticket> tickets;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List <ParkingPass> parkingPasses;
+	
 	
 	public User() {
 		
