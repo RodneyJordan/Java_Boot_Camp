@@ -3,6 +3,7 @@
 body, html {
     height: 100%;
     margin: 0;
+    margin-top:20px;
 }
 
 
@@ -33,6 +34,12 @@ header{
   
 }
 
+.login-form{
+	width: 50%;
+	margin: 0 auto;
+	color:white;
+	margin-top:5%;
+}
 .carousel-inner > .item > img {
   width:500px;
   height:500px;
@@ -42,4 +49,10 @@ header{
   width:500px;
   height:400px;
   margin:0 auto;
+}
+
+footer{
+	margin-top:5%;
+	color:white;
+    width:100%;
 }

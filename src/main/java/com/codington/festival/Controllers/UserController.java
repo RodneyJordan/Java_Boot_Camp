@@ -1,4 +1,3 @@
-
 package com.codington.festival.Controllers;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -47,6 +46,11 @@ public class UserController {
         System.out.println(user.getLast_name());
         System.out.println(user.getPassword());
         return "redirect:/login";
+    }
+    
+    @GetMapping("/info")
+    public String showInfoPage() {
+    	return "info";
     }
       
 }

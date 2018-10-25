@@ -1,66 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/pageTemplate.css">
-    <link rel="stylesheet" href="/css/login.css">
-
-</head>
+<head th:replace="partials/fragments :: head"> </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" th:href="@{/}">Codington Festival</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarText">
-		    <ul class="navbar-nav ml-auto">
-		   
-		      <li th:if="!${loggedIn}" class="nav-item">
-		        <a class="nav-link" th:href="@{/login}">Login <span class="sr-only">(current)</span></a>
-		      </li>
-		      <li th:if="!${loggedIn}" class="nav-item">
-		        <a class="nav-link" th:href="@{/register}">Register</a>
-		      </li>	
+<nav th:replace="partials/fragments :: navbar"></nav>"
+		
+		
 
-		     <li th:if="${loggedIn}" class="nav-item">
-		      <a class="nav-link" th:href="@{/profile}">My Profile</a>
-		     </li>		     
-		      <li class="nav-item">
-		        <a class="nav-link" th:href="@{/}">Info</a>
-		      </li>
-		    </ul>	    		      
-            <form th:if="${loggedIn}"  class="form-inline my-2 my-lg-0" th:action="@{/logout}" th:method="post">
-                <li class="btn-link btn" style="margin-top: 8px">Logout</li>
-            </form>
-		  </div>
-		</nav>
-		
-		
-<div class="wrapper">
-    <section>
-          <form class="login-form"  th:action="@{/login}" method="post">
+    <div class="container">
+    	<div class="col-lg-12 text-center">
+          <form  th:action="@{/login}" method="post">
+          <div class="form-group login-form">
 	        <h3 align="center">Login</h3>
+	        
 			  <div class="form-group">
-			    <label for="username">Email address</label>
-			    <input type="email" class="form-control" id="username" name="username" placeholder="Enter email">
-			    
+			    <input type="email" class="form-control" id="username" name="username" placeholder="Email">
 			  </div>
+			  
 			  <div class="form-group">
-			    <label for="exampleInputPassword1">Password</label>
 			    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			  </div>
-			  <button type="submit" class="btn btn-primary loginBtn">Submit</button>
+			  
+			  <div th:if="${param.error}">
+        			Invalid Email and Password.
+   			  </div>
+   			  
+   			  <div th:if="${param.logout}">
+        			You have been logged out.
+    			</div>
+			  
+			  	<button type="submit" class="btn btn-primary form-control">Login</button>
+			  	<a th:href="@{/register}">New user?</a>
+			  	
+			  </div>
 			</form>	
-    </section>
-    <div th:if="${param.error}">
-        Invalid Email and Password.
-    </div>
-    <div th:if="${param.logout}">
-        You have been logged out.
+		</div>
     </div>
 
+
+
 </div>
+
+
+
+<footer th:replace="partials/fragments :: footer"></footer>
+<script th:replace="partials/fragments :: scripts" ></script>
 </body>
 </html>
