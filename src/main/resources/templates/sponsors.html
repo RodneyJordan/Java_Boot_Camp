@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/pageTemplate.css">
 </head>
@@ -30,41 +30,27 @@
 		<section>
 			<div class="container holder-box">
 				<div class="row">
-					<h2>Reserve Tickets</h2>
+					<h2>Sponsors</h2>
 				</div>
 				<div class="row">
-					<div class="col">
-						Max of 10 tickets per user
-						<form th:action="@{/ticketbuy}" method="POST">
-							<select name="ticket_add_sub">
-								<option value= 1>1</option>
-								<option value= 2>2</option>
-								<option value= 3>3</option>
-								<option value= 4>4</option>
-								<option value= 5>5</option>
-								<option value= 6>6</option>
-								<option value= 7>7</option>
-								<option value= 8>8</option>
-								<option value= 9>9</option>
-								<option value= 10>10</option>
-								<input type="submit" value="reserve">
-							</select>
-						</form>
-					</div>
+					sponsors go here
 				</div>
+			
 			</div>
 		</section>
 	</div>
 	
+	
 	<footer>
         <div class="contact">
             <h6><a href="https://www.google.com/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiD9rfl6JLeAhUMOawKHYeSDYIQ_AUIDigB&biw=1191&bih=600#imgrc=hM7lHKPVzV8OWM:">Contact Us</a></h6>
-            <h6><a href="https://twitter.com/CodingtonAlive">Follow us on Twitter     <i class="fa fa-twitter-square" style="font-size:24px"></i></a></h6>
+            <h6><a href="twitter.com">Follow us on Twitter     <i class="fa fa-twitter-square" style="font-size:24px"></i></a></h6>
             <p>7050 Fairgrounds Pkwy San Antonio, Texas</p>
         </div>
     </footer>
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
