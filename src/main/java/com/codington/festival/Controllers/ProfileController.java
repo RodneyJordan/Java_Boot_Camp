@@ -32,6 +32,9 @@ public class ProfileController {
 	
 	@GetMapping("/profile")
 	public String showUserProfile(Model model) {
+		if(!userSvc.isLoggedIn()) {
+			return "redirect:register";
+		}
 		model.addAttribute("loggedIn", userSvc.isLoggedIn());
 		model.addAttribute("name",userSvc.currentUser().getFirst_name());
 		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -44,4 +47,5 @@ public class ProfileController {
 
 		return "profile";
 	}
+	
 }

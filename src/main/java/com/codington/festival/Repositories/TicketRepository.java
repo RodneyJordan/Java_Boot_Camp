@@ -1,5 +1,12 @@
 package com.codington.festival.Repositories;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.codington.festival.Models.Ticket;
@@ -10,7 +17,7 @@ import antlr.collections.List;
 public interface TicketRepository extends CrudRepository<Ticket, Long> {
 	
 	@Query(value = "SELECT * FROM ticket WHERE user_id = ?1", nativeQuery = true)
-	List<Ticket> findAllById(long Id);
+	ArrayList<Ticket> findAllById(long Id);
 	
 	@Query(value = "SELECT COUNT(*) FROM ticket WHERE user_id = ?1", nativeQuery = true)
 	Long ticketNumber(long id);
@@ -22,7 +29,7 @@ public interface TicketRepository extends CrudRepository<Ticket, Long> {
 	int getTicketsPerUser(long userId);
 	
 	@Query(value = "SELECT id FROM ticket WHERE user_id = ?1 LIMIT ?2", nativeQuery = true)
-    List<BigInteger> getTicketIds(long userId, int limit);
+    ArrayList<BigInteger> getTicketIds(long userId, int limit);
 	
 	 @Transactional
 	 @Modifying
