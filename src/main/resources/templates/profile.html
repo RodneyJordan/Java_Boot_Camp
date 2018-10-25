@@ -68,7 +68,8 @@
 </div>
 
 <form th:action="@{/volunteerbox}" th:method="post">
-	Volunteer Status <input th:field="*{volunteer}" type="checkbox" value="true">
+	<button th:if="${volunteer == true}" type="submit">Do you want cancel Volunteer status?
+	<button th:if="${volunteer == false}" type="submit">Do you want to Volunteer?
 </form>
 	
 </div>

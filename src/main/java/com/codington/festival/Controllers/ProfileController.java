@@ -34,14 +34,19 @@ public class ProfileController {
 		model.addAttribute("name",userSvc.currentUser().getFirst_name());
 		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		model.addAttribute("name", userSvc.currentUser().getFirst_name());
+		model.addAttribute("volunteer", userSvc.currentUser().getVolunteer());
 		model.addAttribute("ticketNumber", 10 - ticketRepo.ticketNumber(currentUser.getId()));
 		model.addAttribute("showTickets", ticketRepo.findAllById(currentUser.getId()));
 		return "profile";
 	}
 	
 	@PostMapping("/volunteerbox")
-	public String volunSwitch(@ModelAttribute User user, @ModelAttribute Boolean volunteer) {
-		user.setVolunteer(volunteer);
+	public String volunSwitch(@ModelAttribute User user) {
+		if(user.getVolunteer()) {
+			user.setVolunteer(false);
+		}else {
+			user.setVolunteer(false);
+		}
 		return "profile";
 	}
 }
