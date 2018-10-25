@@ -62,4 +62,10 @@ public class UserController {
     	return "info";
     }
       
+    @GetMapping("/contact")
+    public String showContactPage() {
+    	return "contact";
+    }
+    
+    
 }

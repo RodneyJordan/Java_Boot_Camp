@@ -6,12 +6,11 @@
 <nav th:replace="partials/fragments :: navbar"></nav>"
 
 
-
-		
 		
 <div class="container">
 	<div class="col-lg-12 text-center">
 		<div class="form-group login-form">
+		
           <form  th:action="@{/register}" method="POST" th:object="${user}">
 	        <h3 align="center">Register</h3>	
 	        
@@ -38,10 +37,10 @@
 			  		  
 			  <button type="submit" class="btn btn-primary loginBtn form-control">Sign Up</button>
 			  <a th:href="@{/login}">Already have an account?	</a>
+			  
 			</form>
 		</div>
 	</div>
-
 </div>
 
 <footer th:replace="partials/fragments :: footer"></footer>
