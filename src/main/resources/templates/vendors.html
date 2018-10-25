@@ -64,11 +64,18 @@
 					<h2>Vendors</h2>
 				</div>
 				<div class="row holder-box" th:each="vendor : ${showVendors}">
-					<div class="col">	
-						<p><span>Vendor Name: </span><span th:text="${vendor.name}"></span></p>	
-						<p><span>Vendor Email: </span><span th:text="${vendor.email}"></span></p>	
-						<p><span>Vendor Phone: </span><span th:text="${vendor.phone}"></span></p>	
-						<p><span>Vendor Url: </span><span th:text="${vendor.url}"></span></p>			
+					<div class="col">
+						<div class="row">
+							<div class="col-4">
+							<img src="../img/dunk.jpg" alt="" />
+							</div>
+							<div class="col-8">
+								<p><span>Vendor Name: </span><span th:text="${vendor.name}"></span></p>	
+								<p><span>Vendor Email: </span><span th:text="${vendor.email}"></span></p>	
+								<p><span>Vendor Phone: </span><span th:text="${vendor.phone}"></span></p>	
+								<p><span>Vendor Url: </span><span th:text="${vendor.url}"></span></p>
+							</div>	
+						</div>		
 					</div>
 				</div>	
 			</div>
