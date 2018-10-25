@@ -33,7 +33,26 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
+	@Column
+	private Boolean volunteer;
 	
+	
+	public Boolean getVolunteer() {
+		return volunteer;
+	}
+
+	public void setVolunteer(Boolean volunteer) {
+		this.volunteer = volunteer;
+	}
+
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	private List <Ticket> tickets;
 	
@@ -48,21 +67,24 @@ public class User {
 	        password = copy.password;
 	        first_name = copy.first_name;
 	        last_name = copy.last_name;
+	        volunteer = copy.volunteer;
 	    }
 
-	public User(String first_name,String last_name,String email, String password) {
+	public User(String first_name,String last_name,String email, String password, Boolean volunteer) {
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.password = password;
+		this.volunteer = volunteer;
 	}
 	
-	public User(Long id,String first_name,String last_name,String email, String password) {
+	public User(Long id,String first_name,String last_name,String email, String password, Boolean volunteer) {
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.password = password;
+		this.volunteer = volunteer;
 	}
 
 	public Long getId() {

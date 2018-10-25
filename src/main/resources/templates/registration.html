@@ -53,6 +53,12 @@
 			    <input  th:field="*{password}"  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			  </div>
 			  
+			  <div class="form-group">
+			  	<label for="volunteerbox">Do you want sign up to be a volunteer?</label>
+			  	<input th:field="*{volunteer}" id="volunteerbox" value="true" type="checkbox" checked>
+			  	 
+			  </div>
+			  
 			  <button type="submit" class="btn btn-primary loginBtn">Submit</button>
 			  
 			</form>

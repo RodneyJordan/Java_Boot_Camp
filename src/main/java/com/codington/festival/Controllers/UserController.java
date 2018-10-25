@@ -51,6 +51,7 @@ public class UserController {
         System.out.println(user.getFirst_name());
         System.out.println(user.getLast_name());
         System.out.println(user.getPassword());
+        System.out.println(user.getVolunteer());
         return "redirect:/login";
     }
       
