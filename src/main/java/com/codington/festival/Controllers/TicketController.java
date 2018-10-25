@@ -35,6 +35,7 @@ public class TicketController {
 		return "ticketbuy";
 	}
 	
+
 	@PostMapping("/ticketbuy")
 	public String buyTickets(
 			@RequestParam(name = "ticket_add_sub") int number) {
@@ -77,10 +78,4 @@ public class TicketController {
 	}
 	
 	
-	
-	
-	
-	
-	
 }
-;

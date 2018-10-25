@@ -32,12 +32,16 @@ public class ProfileController {
 	
 	@GetMapping("/profile")
 	public String showUserProfile(Model model) {
+		model.addAttribute("loggedIn", userSvc.isLoggedIn());
+		model.addAttribute("name",userSvc.currentUser().getFirst_name());
 		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		model.addAttribute("name", userSvc.currentUser().getFirst_name());
 		model.addAttribute("ticketNumber", 10 - ticketRepo.ticketNumber(currentUser.getId()));
 		model.addAttribute("numOfTickets", ticketRepo.getTicketsPerUser(currentUser.getId()));
 		model.addAttribute("numOfParking", parkRepo.getParkingPassesPerUser(currentUser.getId()));
 		System.out.println(ticketRepo.findAllById(currentUser.getId()));
+		model.addAttribute("showTickets", ticketRepo.findAllById(currentUser.getId()));
+
 		return "profile";
 	}
 }

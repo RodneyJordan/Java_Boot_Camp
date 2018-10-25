@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- th:replace="fragments :: head" --> 
+<head th:fragment="head">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+   	<!-- th:replace="fragments :: navbar" --> 
+   	<div class="container-fluid">
+    <nav th:fragment="navbar">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+		    <a class="navbar-brand" th:href="@{/}">Codington Festival</a>
+		      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+		    	<li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Navigation
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			        	  <a class="dropdown-item" th:href="@{/info}">Information</a>
+			        	  <a class="dropdown-item" th:href="@{/ticketbuy}">Tickets</a>
+			        	  <a class="dropdown-item" href="#">FAQ page</a>
+			        	  <div class="dropdown-divider"></div>
+			       	 	  <a class="dropdown-item" th:href="@{/register}">My Profile</a>
+			         	  <a class="dropdown-item" th:href="@{/login}">Login </a>
+			          	  <a class="dropdown-item" th:href="@{/register}">Sign Up</a> 
+			          	  <div class="dropdown-divider"></div>
+				          <a class="dropdown-item" href="#">View sponsors</a>
+				          <a class="dropdown-item" href="#">View vendors</a>
+				          <a class="dropdown-item" href="#">Become a sponsor</a>
+				          <a class="dropdown-item" href="#">Become a vendor</a>
+				          <div class="dropdown-divider"></div>
+				              <form th:action="@{/logout}" th:method="post" class="form-inline my-2 my-lg-0">
+				              	<button class="btn btn-danger">Logout</button>
+    						 </form>
+       				 </div>
+     			 </li>
+     			</ul>
+	  		</div>
+		</nav>
+    </nav>
+  </div>
+    
+    <!-- th:replace="fragments :: footer" --> 
+    <footer th:fragment="footer">
+    
+        <div class="row">
+        <div class="col-lg-12 text-center">
+            <h6><a href="https://www.google.com/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiD9rfl6JLeAhUMOawKHYeSDYIQ_AUIDigB&biw=1191&bih=600#imgrc=hM7lHKPVzV8OWM:">Contact Us</a></h6>
+            <h6><a href="twitter.com">Follow us on Twitter     <i class="fa fa-twitter-square" style="font-size:24px"></i></a></h6>
+            <p>7050 Fairgrounds Pkwy San Antonio, Texas</p>
+            </div>
+        </div>
+    </footer>
+   
+    <!-- th:replace="fragments :: scripts" --> 
+    <div th:fragment="scripts">
+	    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</div>
+
+</body>
+</html>

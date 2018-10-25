@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="partials/fragments :: head"> </head>
+<body>
+
+<nav th:replace="partials/fragments :: navbar"></nav>"
+
+
+
+
+	<div class="container">
+	
+	<h1 class="text-center" style="color:orange;">New Condington Festival Events!</h1>
+	
+		<div class="jumbotron">
+			<div class="row">
+			<div class="col-lg-12">
+			
+			</div>
+				<div class="col-lg-6">
+					<img class="img-responsive"  src="../img/trashriver.jpg"/>
+				</div>
+					<div class="col-lg-6">
+						<h1>About</h1>
+						<p>
+						Welcome to the First Annual New Codington Festival! The New Codington Festival is a celebration of the union between 
+						the two cities of Southtown and Northtown, guaranteed fun to be had over the New Codington River (formerly 
+						the river coder)! The festival is the brainchild of New Codington chamber of commerce and numerous other 
+						sponsors all dedicated to the future prosperity of New Codington and the happiness of its citizens.
+						</p>
+					
+						<p>
+						Along with reserving you ticket for this historic event, you are encouraged (but not obligated) to provide a 
+						small donation to help provide for the city's new transition, funds raised will go to different local projects 
+						like stimulating local businesses and cleaning up our beloved river. So please give from your heart and enjoy the 
+						Festival!  
+						</p>
+						<a href="#">Sign up to be a volunteer</a>
+					</div>
+				</div>
+			</div>
+		
+		
+		
+			<div class="jumbotron">
+				<div class="row">
+					<div class="col-lg-8">
+						<h2>Elephant Rides!</h2>
+						<p>We are excited to say that Garbozo, North Town Zoo's famous elephant, is no longer just eye-candy.
+						Elephant rides will be offered all-day for children and adults. 
+						</p>
+						<p>
+						<i>*Note: Please do not wear any elephant apparel if you are planning to take a ride on Garbozo. Garbozo is wildy
+						territorial (there is a reason why he is kept alone). On a related note, the Codington Chamber of Commerce is not responsible
+						for any injuries sustained while riding Garbozo.</i>
+						</p>
+						<a th:href="@{/ticketbuy}"><button class="btn btn-outline-primary">Buy Tickets</button></a>
+					</div>	
+					
+					<div class="col-lg-4">
+						<img class="img-responsive" src="https://images.unsplash.com/photo-1536798227072-f571dcefdef1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6aa1acf93ecbd62678f7328194e4bf5c&auto=format&fit=crop&w=1057&q=80" width="80%"/>
+					</div>	
+						
+				</div>
+			</div>
+			
+			<div class="jumbotron">
+				<div class="row">
+				
+					<div class="col-lg-4">
+						<img class="img-responsive" src="http://bigbouncebigfun.com/wp-content/uploads/2015/09/dunk-2-1024x768.jpg" width="80%"/>
+					</div>
+					<div class="col-lg-8">
+					<h2>Mayorial Dunk Tank!</h2>
+					<p>Not a fan of our current Mayor, James Hiccup? Now is your chance to let loose on your aggressions.
+						James is both aquaphobic and bathophobic, so any bullseyes are sure to be fun for the whole family.
+					</p>
+						<a th:href="@{/ticketbuy}"><button class="btn btn-outline-primary">Buy Tickets</button></a>
+					</div>	
+				</div>
+			</div>
+			
+			
+			
+			<div class="jumbotron">
+				<div class="row">
+
+					<div class="col-lg-8">
+					<h2>Face Painting!</h2>
+							<p> There will be a several face painting booths run by renowned South Town tattoo artist Dingus McJones.
+							Whether you are looking for a fun temporary lizard face for the kids or a permanent lizard face solution for adults, we
+							have got you covered.
+							</p>
+						<a th:href="@{/ticketbuy}"><button class="btn btn-outline-primary">Buy Tickets</button></a>
+					</div>
+					
+					<div class="col-lg-4">
+						<img class="img-responsive" src="../img/lizardface.jpg" width="80%"/>
+					</div>
+		
+				</div>
+			</div>
+
+
+			<div class="jumbotron">
+				<div class="row">			
+					<div class="col-lg-4">
+						<img class="img-responsive" src="../img/carnie.jpg" width="80%"/>
+					</div>
+					<div class="col-lg-8">
+					<h2>Carnival Games!</h2>
+					<p>The New Codington Festival will be loaded with carnival games that are fun for the whole
+					family! As part of the Codington River Revival Program, all carnival prizes are made from recycled trash from our
+					famous Codington river.
+					</p>
+						<a th:href="@{/ticketbuy}"><button class="btn btn-outline-primary">Buy Tickets</button></a>
+					</div>		
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<button class="btn btn-success">Become a vendor</button>
+					<button class="btn btn-success">Become a sponsor</button>			
+				</div>
+				</div>
+			
+			
+			
+
+<footer th:replace="partials/fragments :: footer"></footer>
+<script th:replace="partials/fragments :: scripts" ></script>
+</body>
+</html>
