@@ -26,7 +26,8 @@ public class UserController {
     }
     
     @GetMapping("/")
-    public String showInfoPage() {
+    public String showInfoPage(Model model) {
+    	model.addAttribute("loggedIn", userSvc.isLoggedIn());
     	return "index";
     }
 
