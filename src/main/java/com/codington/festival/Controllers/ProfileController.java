@@ -5,6 +5,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.TicketRepository;
@@ -34,6 +36,12 @@ public class ProfileController {
 		model.addAttribute("name", userSvc.currentUser().getFirst_name());
 		model.addAttribute("ticketNumber", 10 - ticketRepo.ticketNumber(currentUser.getId()));
 		model.addAttribute("showTickets", ticketRepo.findAllById(currentUser.getId()));
+		return "profile";
+	}
+	
+	@PostMapping("/volunteerbox")
+	public String volunSwitch(@ModelAttribute User user, @ModelAttribute Boolean volunteer) {
+		user.setVolunteer(volunteer);
 		return "profile";
 	}
 }
