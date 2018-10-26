@@ -5,22 +5,20 @@
 
 
 
-<nav th:replace="partials/fragments :: navbar"></nav>"
+<nav th:replace="partials/fragments :: navbar"></nav>
+
+
+
 <main>	
 	
 	
 	<div class="container">
-			<div class="login-form">
-				<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 align="center">Reserve Tickets</h2>
-				</div>
-				<th:block th:if="${numToShow >= 1}">
-				<div class="row">
-					<div class="col-lg-12">
-						Max of 10 tickets per user
+		<div class="col-lg-12 text-center">
+			<div class="form-group login-form">
 						<form th:action="@{/ticketbuy}" method="POST">
-						 <div class="form-group login-form" align="center">
+						<h3>Purchase Tickets</h3>
+						<h6>Max of 10 tickets per user</h6>
+						<div class="input-group">
 							<select class="form-control" name="ticket_add_sub" id="ticketSelect">
 								<option th:if="${numToShow >= 1}" value= 1>1</option>
 								<option th:if="${numToShow >= 2}"  value= 2>2</option>
@@ -33,15 +31,32 @@
 								<option th:if="${numToShow >= 9}"  value= 9>9</option>
 								<option th:if="${numToShow >= 10}"  value= 10>10</option>
 							</select>
-							<button type="submit" id="ticketBtn" class="btn btn-outline-success">Reserve</button>
+								<div class="input-group-prepend">
+									<button type="submit" id="ticketBtn" class="btn btn-success form-control">Reserve</button>
+								</div>
 							</div>
 						</form>
 					</div>
 				</div>
-				</th:block>
+				
+			</th:block>
 				<h1 th:if="${numToShow <= 0}">You have already maxed out on tickets</h1>
-			</div>
-		</div>
+	</div>
+	
+		<section>
+			<!-- <p th:if="${alreadyHave2 == true}">You already have the max amount of parking passes</p>
+			<p th:if="${plateUsed == true}">Plate has already been registered</p>
+			<p th:if="${success == true}">Parking pass registered successfully</p>		-->
+			
+			<h1>Buy A Parking Pass</h1>
+			<form th:action="@{/buyParkingPass}" method="post" th:object="${parkingPass}">
+	   		 	<p>License Plate:</p>
+	    		<input th:field="*{plate}" />
+	    		<input type="submit" />
+			</form>
+		</section>
+	
+
 <footer th:replace="partials/fragments :: footer"></footer>
 
 </main>

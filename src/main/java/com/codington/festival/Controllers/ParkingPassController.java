@@ -33,16 +33,14 @@ public class ParkingPassController {
 			User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 				if (parkingRepo.getParkingPassesPerUser(currentUser.getId()) >= 2) {
 					model.addAttribute("alreadyHave2", true);
+					return "buyParkingPass";
 				} else if (parkingRepo.checkForPlate(parkingPass.getPlate()) > 0) {
 					model.addAttribute("plateUsed", true);
+					return "buyParkingPass";
 				} else {
-					parkingPass.setUser(currentUser);
-					parkingRepo.save(parkingPass);
-					model.addAttribute("success", true);
-					
-		
+					return"redirect:profile";
 				}
-				return "buyParkingPass";
+				
 			} 
 	    
 	    @PostMapping("/deleteParkingPass")

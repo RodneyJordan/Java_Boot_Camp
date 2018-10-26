@@ -53,7 +53,6 @@ public class ProfileController {
 		System.out.println(ticketRepo.findAllById(currentUser.getId()));
 		model.addAttribute("showTickets", ticketRepo.findAllById(currentUser.getId()));
 		model.addAttribute("platesRegistered", parkRepo.getPlatesPerUser(currentUser.getId()));
-
 		return "profile";
 	}
 	

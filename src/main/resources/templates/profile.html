@@ -57,37 +57,37 @@
 </form>	
 	
 	
-
+<hr />
 		
-	
-	
-</div>
-<div>
-	<h1 class="text-center" style="color:white;">My Parking Passes</h1>
-</div>
-
-<div th:each="plate: ${platesRegistered}">
-	<form th:action="@{/deleteParkingPass}" th:method="post">
-		<p>Plate Registered: <span th:text="${plate}"></span> 
-		<input type="hidden" th:value="${plate}" name="deletePlate">
-		<button type="submit">Delete Pass</button></p>
-	</form>
-</div>
-
-<div>
-
-</div>
-
-	<div class="row text-center">
+		<div class="row text-center">
 		<div class="col-lg-12">
 				<a href="#"><button class="btn btn-success">Buy Parking Pass</button></a>		
 		</div>
 	</div>
+	
+	<hr />
+
+	<h1 class="text-center" style="color:white;">My Parking Passes</h1>
 </div>
 
 
+<div th:each="plate: ${platesRegistered}">
+	<div class="row">
+	<div class="col-lg-12 text-center">
+		<form th:action="@{/deleteParkingPass}" th:method="post">
+			<h5 style="color:white;">Plate Registered: <span th:text="${plate}"></span></h5> 
+			<input type="hidden" th:value="${plate}" name="deletePlate">
+			<button class="btn btn-xs btn-danger" type="submit">Delete Pass</button>
+			</form>
+			</div>
+		</div>
+		</div>
+
+<div>
+
 </div>
-    </section>
+</div>
+
 
 
 </main>
