@@ -1,30 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/pageTemplate.css">
-</head>
+<head th:replace="partials/fragments :: head"> </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">Codington Festival</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarText">
-	    <ul class="navbar-nav ml-auto">
-	      <li class="nav-item">
-	        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="/register">Register</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="/">Information</a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
+<nav th:replace="partials/fragments :: navbar"></nav>
 	
 	<div class="wrapper">
 		<section>
@@ -33,26 +11,26 @@
 					<h2 class="center">Sponsors</h2>
 				</div>
 				<div class="row">
-					<div class="col-4">
+					<div class="col">
 						<img src="../img/gold-trophy.jpg" height="100px" width=100px; alt="" />
 					</div>
-					<div class="col-8">
+					<div class="col">
 						<h3>Richard's House of Ribs</h3>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-4">
+					<div class="col">
 						<img src="../img/gold-trophy.jpg" height="100px" width=100px; alt="" />
 					</div>
-					<div class="col-8">
+					<div class="col">
 						<h3>New Codington Youth Technology Outreach (NCYTO)</h3>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-4">
+					<div class="col">
 						<img src="../img/gold-trophy.jpg" height="100px" width=100px; alt="" />
 					</div>
-					<div class="col-8">
+					<div class="col">
 						<h3>The New Codington Times</h3>
 					</div>
 				</div>	
