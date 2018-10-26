@@ -51,22 +51,19 @@ public class ProfileController {
 		return "profile";
 	}
 	
-<<<<<<< HEAD
 	@PostMapping("/volunteerbox")
 	public String volunSwitch(@ModelAttribute User user) {
-		if(user.getVolunteer()) {
-			System.out.println(user.getVolunteer());
-			user.setVolunteer(false);
-			System.out.println(user.getVolunteer());
+		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if(currentUser.getVolunteer() == true) {
+			currentUser.setVolunteer(false);
+			System.out.println("canceling volunteership");
 
-		}else {
-			System.out.println(user.getVolunteer());
-			user.setVolunteer(false);
-			System.out.println(user.getVolunteer());
+		}else if(currentUser.getVolunteer() == false){
+			currentUser.setVolunteer(true);
+			System.out.println("now volunteering");
 
 		}
-		return "profile";
+		return "redirect:/profile";
 	}
-=======
->>>>>>> master
+
 }
