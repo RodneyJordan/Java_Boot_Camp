@@ -7,21 +7,12 @@
 
 
 
+           
+                    
 
-	<div class="container">
-	
-	<h1 class="text-center" style="color:orange;">New Codington Festival Events!</h1>
-	
-		<div class="jumbotron">
-			<div class="row">
-			<div class="col-lg-12">
-			
-			</div>
-				<div class="col-lg-6">
-					<img class="img-responsive"  src="../img/trashriver.jpg"/>
-				</div>
-					<div class="col-lg-6">
-						<h1>About</h1>
+				 
+					<div class="col-lg-6" style="color:white;">
+						<h1><u>About</u></h1>
 						<p>
 						Welcome to the First Annual New Codington Festival! The New Codington Festival is a celebration of the union between 
 						the two cities of Southtown and Northtown, guaranteed fun to be had over the New Codington River (formerly 
@@ -35,12 +26,15 @@
 						like stimulating local businesses and cleaning up our beloved river. So please give from your heart and enjoy the 
 						Festival!  
 						</p>
-						<a href="#">Sign up to be a volunteer</a>
+					</div>
+					
+					<div class="col-lg-6">
+					<h1 style="color:white;">Mayor Hiccup's Tweets!</h1>
+						<a class="twitter-timeline" href="https://twitter.com/CodingtonAlive?ref_src=twsrc%5Etfw" data-height="300">Tweets by CodingtonAlive</a> 
 					</div>
 				</div>
-			</div>
-		
-		
+							
+		<hr />
 		
 			<div class="jumbotron">
 				<div class="row">
@@ -121,7 +115,13 @@
 			
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<button class="btn btn-success" data-toggle="modal" data-target="#myModalVendor">Become a vendor</button>
+						<a href="#"><button class="btn btn-info">Become a volunteer</button></a>								
+				</div>
+				</div>
+		</div>	
+</main>			
+
+				<button class="btn btn-success" data-toggle="modal" data-target="#myModalVendor">Become a vendor</button>
 					<div class="modal" id="myModalVendor">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
@@ -158,6 +158,8 @@
 					    </div>
 					  </div>
 					</div>	
+					
+					
 					<button class="btn btn-success" data-toggle="modal" data-target="#myModalSponsor">Become a sponsor</button>
 						<div class="modal" id="myModalSponsor">
 						  <div class="modal-dialog">
@@ -198,10 +200,12 @@
 				</div>
 			</div>
 			
-			
+
 			
 
 <footer th:replace="partials/fragments :: footer"></footer>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <script th:replace="partials/fragments :: scripts" ></script>
 </body>
 </html>
