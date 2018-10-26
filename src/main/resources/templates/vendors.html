@@ -30,37 +30,6 @@
 		<section>
 			<div class="container holder-box">
 				<div class="row">
-					<h2>Sign-up To Be a Vendor</h2>
-				</div>
-				<div class="row">
-					<form th:action="@{/vendors}" method="POST">
-						<label for="">
-						name
-						<input type="text" name = "name"/>
-						</label>
-						<label for="">
-						email
-						<input type="text" name = "email"/>
-						</label>
-						
-						<label for="">
-						phone
-						<input type="text" name = "phone"/>
-						</label>
-						
-						<label for="">
-						url
-						<input type="text" name = "url"/>
-						</label>
-						
-						<button>Submit</button>
-					</form>
-				</div>
-			</div>
-		</section>
-		<section>
-			<div class="container holder-box">
-				<div class="row">
 					<h2>Vendors</h2>
 				</div>
 				<div class="row holder-box" th:each="vendor : ${showVendors}">
