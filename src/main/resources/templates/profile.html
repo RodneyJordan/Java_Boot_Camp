@@ -2,9 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/fragments :: head"> </head>
 <body>
+
+
 <nav th:replace="partials/fragments :: navbar"></nav>"
 
-
+<main>
 		<p th:if="${negativeNum == true}">Please enter a valid amount of tickets to delete</p>
 		<p th:if="${numDeleted != null}">You Deleted <span th:text="${numDeleted}"></span> tickets</p>
 		
@@ -67,9 +69,10 @@
 	</div>
 </div>
 	
-</div>
-    </section>
+</section>
 
+
+</main>
 
 <footer th:replace="partials/fragments :: footer"></footer>
 <script th:replace="partials/fragments :: scripts" ></script>
