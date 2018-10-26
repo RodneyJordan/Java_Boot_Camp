@@ -44,9 +44,11 @@ public class ProfileController {
 		model.addAttribute("volunteer", userSvc.currentUser().getVolunteer());
 		model.addAttribute("ticketNumber", 10 - ticketRepo.ticketNumber(currentUser.getId()));
 		model.addAttribute("numOfTickets", ticketRepo.getTicketsPerUser(currentUser.getId()));
+		System.out.println("num of tickets" + ticketRepo.getTicketsPerUser(currentUser.getId()));
 		model.addAttribute("numOfParking", parkRepo.getParkingPassesPerUser(currentUser.getId()));
 		System.out.println(ticketRepo.findAllById(currentUser.getId()));
 		model.addAttribute("showTickets", ticketRepo.findAllById(currentUser.getId()));
+		model.addAttribute("platesRegistered", parkRepo.getPlatesPerUser(currentUser.getId()));
 
 		return "profile";
 	}

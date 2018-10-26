@@ -37,7 +37,10 @@ public class TicketController {
 		if(!userSvc.isLoggedIn()) {
 			return "redirect:login";
 		}
+		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		model.addAttribute("user", (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+		int numOfTickets = ticketRepo.getTicketsPerUser(currentUser.getId());
+		model.addAttribute("numToShow", (10 - numOfTickets));
 		return "ticketbuy";
 	}
 	
