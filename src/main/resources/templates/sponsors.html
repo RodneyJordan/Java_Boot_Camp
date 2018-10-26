@@ -4,54 +4,90 @@
 <body>
 <nav th:replace="partials/fragments :: navbar"></nav>
 
-<main>
-	
-	<div class="wrapper">
-		<section>
-			<div class="container holder-box">
-				<div class="row">
-					<h2 class="center">Sponsors</h2>
+<main style="margin-top: 20px">
+	<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>Sponsors</h2>
 				</div>
-				<div class="row">
-					<div class="col">
-						<img src="../img/gold-trophy.jpg" height="100px" width=100px; alt="" />
-					</div>
-					<div class="col">
-						<h3>Richard's House of Ribs</h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<img src="../img/gold-trophy.jpg" height="100px" width=100px; alt="" />
-					</div>
-					<div class="col">
-						<h3>New Codington Youth Technology Outreach (NCYTO)</h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<img src="../img/gold-trophy.jpg" height="100px" width=100px; alt="" />
-					</div>
-					<div class="col">
-						<h3>The New Codington Times</h3>
-					</div>
-				</div>	
 			</div>
-		</section>
+			<div class="jumbotron">
+				<div class="row">						
+					<div class="col-lg-4">
+						<img src="../img/gold-trophy.jpg" height="200px" width=200px; alt="" />
+					</div>								
+					<div class="col-lg-8">
+						<h3>Richard's House of Ribs</h3>
+					</div>	
+				</div>		
+			</div>
+			<div class="jumbotron">
+				<div class="row">						
+					<div class="col-lg-4">
+						<img src="../img/gold-trophy.jpg" height="200px" width=200px; alt="" />
+					</div>								
+					<div class="col-lg-8">
+						<h3>Sandy's Dry Cleaning and BBQ</h3>
+					</div>	
+				</div>		
+			</div>
+			<div class="jumbotron">
+				<div class="row">						
+					<div class="col-lg-4">
+						<img src="../img/gold-trophy.jpg" height="200px" width=200px; alt="" />
+					</div>								
+					<div class="col-lg-8">
+						<h3>Phillip's Phish House</h3>
+					</div>	
+				</div>		
+			</div>		
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+		 		<button align="center" class="btn btn-success" data-toggle="modal" data-target="#myModalSponsor">Become a sponsor</button>
+		 	<div class="modal" id="myModalSponsor">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						
+						      <!-- Modal Header -->
+						      <div class="modal-header">
+						        <h4 class="modal-title">Become A Sponsor</h4>
+						        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						      </div>
+						
+						      <!-- Modal body -->
+						      <div class="modal-body">
+						        <form action="https://formspree.io/swantiffany.williams@accenturefederal.com" method="POST">
+									<label for="sponsor_form">Company Name:
+										<input type="text" name="company_name"/>
+									</label>
+									<label for="sponsor_form">Sponsorship Amount:
+										<input type="text" name="amount"/>
+									</label>
+									<label for="sponsor_form">Contact Name:
+										<input type="text" name="contact_name"/>
+									</label>
+									<label for="sponsor_form">Contact Number:
+										<input type="text" name="contact_phone"/>
+									</label><br>
+									<button>Submit</button>
+								</form>
+						      </div>
+						
+						      <!-- Modal footer -->
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						      </div>
+						    </div>
+						</div>
+					</div>	
+			</div>
+		</div>
 	</div>
 </main>	
 	
-	<footer>
-        <div class="contact">
-            <h6><a href="https://www.google.com/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiD9rfl6JLeAhUMOawKHYeSDYIQ_AUIDigB&biw=1191&bih=600#imgrc=hM7lHKPVzV8OWM:">Contact Us</a></h6>
-            <h6><a href="twitter.com">Follow us on Twitter     <i class="fa fa-twitter-square" style="font-size:24px"></i></a></h6>
-            <p>7050 Fairgrounds Pkwy San Antonio, Texas</p>
-        </div>
-    </footer>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+	<footer th:replace="partials/fragments :: footer"></footer>
+	<script th:replace="partials/fragments :: scripts" ></script>
 </html>
