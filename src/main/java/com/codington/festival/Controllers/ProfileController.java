@@ -5,6 +5,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.ParkingPassRepository;
@@ -39,6 +41,7 @@ public class ProfileController {
 		model.addAttribute("name",userSvc.currentUser().getFirst_name());
 		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		model.addAttribute("name", userSvc.currentUser().getFirst_name());
+		model.addAttribute("volunteer", userSvc.currentUser().getVolunteer());
 		model.addAttribute("ticketNumber", 10 - ticketRepo.ticketNumber(currentUser.getId()));
 		model.addAttribute("numOfTickets", ticketRepo.getTicketsPerUser(currentUser.getId()));
 		model.addAttribute("numOfParking", parkRepo.getParkingPassesPerUser(currentUser.getId()));
@@ -48,4 +51,19 @@ public class ProfileController {
 		return "profile";
 	}
 	
+	@PostMapping("/volunteerbox")
+	public String volunSwitch(@ModelAttribute User user) {
+		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if(currentUser.getVolunteer() == true) {
+			currentUser.setVolunteer(false);
+			System.out.println("canceling volunteership");
+
+		}else if(currentUser.getVolunteer() == false){
+			currentUser.setVolunteer(true);
+			System.out.println("now volunteering");
+
+		}
+		return "redirect:/profile";
+	}
+
 }

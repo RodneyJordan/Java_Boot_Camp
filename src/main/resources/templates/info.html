@@ -6,11 +6,10 @@
 <nav th:replace="partials/fragments :: navbar"></nav>"
 
 
-
-           
+<main>
                     
-
-				 
+	<div class="container">
+				 <div class="row">
 					<div class="col-lg-6" style="color:white;">
 						<h1><u>About</u></h1>
 						<p>
@@ -32,7 +31,7 @@
 					<h1 style="color:white;">Mayor Hiccup's Tweets!</h1>
 						<a class="twitter-timeline" href="https://twitter.com/CodingtonAlive?ref_src=twsrc%5Etfw" data-height="300">Tweets by CodingtonAlive</a> 
 					</div>
-				</div>
+		
 							
 		<hr />
 		
@@ -113,15 +112,19 @@
 			</div>
 			
 			
-			<div class="row">
 				<div class="col-lg-12 text-center">
-						<a href="#"><button class="btn btn-info">Become a volunteer</button></a>								
+						<a align="center" href="#"><button class="btn btn-success">Become a volunteer</button></a>
+						<button  align="center" class="btn btn-success" data-toggle="modal" data-target="#myModalVendor">Become a vendor</button>
+						<button  align="center" class="btn btn-success" data-toggle="modal" data-target="#myModalSponsor">Become a sponsor</button>
+														
 				</div>
-				</div>
-		</div>	
-</main>			
+			</div>
+		</div>
 
-				<button class="btn btn-success" data-toggle="modal" data-target="#myModalVendor">Become a vendor</button>
+				
+</main>	
+
+				
 					<div class="modal" id="myModalVendor">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
@@ -160,7 +163,6 @@
 					</div>	
 					
 					
-					<button class="btn btn-success" data-toggle="modal" data-target="#myModalSponsor">Become a sponsor</button>
 						<div class="modal" id="myModalSponsor">
 						  <div class="modal-dialog">
 						    <div class="modal-content">
@@ -197,8 +199,6 @@
 						    </div>
 						</div>
 					</div>				
-				</div>
-			</div>
 			
 
 			
