@@ -32,10 +32,14 @@ public class ProfileController {
         this.parkRepo = parkRepo;
     }
 	
+    
 	@GetMapping("/profile")
 	public String showUserProfile(Model model) {
 		if(!userSvc.isLoggedIn()) {
 			return "redirect:register";
+		}
+		if(ticketRepo.getTicketsPerUser(userSvc.currentUser().getId()) >0) {
+			model.addAttribute("hasTickets",true);
 		}
 		model.addAttribute("loggedIn", userSvc.isLoggedIn());
 		model.addAttribute("name",userSvc.currentUser().getFirst_name());
