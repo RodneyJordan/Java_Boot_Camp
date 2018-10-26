@@ -197,18 +197,18 @@
 					
 					      <!-- Modal body -->
 					      <div class="modal-body">
-					        <form action="" method="POST" name="vendor_form">
+					        <form th:action="@{/vendors}" method="POST" name="vendor_form">
 								<label for="vendor_form">Vendor Name:
-									<input type="text" />
+									<input type="text" name = "name"/>
 								</label>
 								<label for="vendor_form">Vendor Email:
-									<input type="text" />
+									<input type="text" name = "email"/>
 								</label>
 								<label for="vendor_form">Vendor Phone:
-									<input type="text" />
+									<input type="text" name = "phone"/>
 								</label>
 								<label for="vendor_form">Vendor URL:
-									<input type="text" />
+									<input type="text" name = "url"/>
 								</label><br>
 								<button>Submit</button>
 							</form>
