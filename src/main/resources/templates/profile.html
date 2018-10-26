@@ -3,10 +3,6 @@
 <head th:replace="partials/fragments :: head"> </head>
 <body>
 <nav th:replace="partials/fragments :: navbar"></nav>"
-
-
-		<p th:if="${negativeNum == true}">Please enter a valid amount of tickets to delete</p>
-		<p th:if="${numDeleted != null}">You Deleted <span th:text="${numDeleted}"></span> tickets</p>
 		
     <section>
         <div class="container">
@@ -52,13 +48,21 @@
 	</div>
 </div>
 <div>
-	<h1>Amount of parking passes <span th:text="${numOfParking}"></span></h1>
+	<h1>Amount of parking passes registered: <span th:text="${numOfParking}"></span></h1>
 </div>
+<div th:each="plate: ${platesRegistered}">
+	<form th:action="@{/deleteParkingPass}" th:method="post">
+		<p>Plate Registered: <span th:text="${plate}"></span> 
+		<input type="hidden" th:value="${plate}" name="deletePlate">
+		<button type="submit">Delete Pass</button></p>
+	</form>
+</div>
+
 <div>
-	<form th:action="@{/refundTickets}" th:method="post">
-		How many tickets would you like to delete?
-		<input type="text" name="numOfTickets" />
-		<button type="submit">Submit</button>
+	<form th:action="@{/refundTickets}" id="refundForm" th:method="post">
+	<p>How many tickets would you like to delete?</p>
+	<input type="text" id="ticketDelete" name="numOfTickets" />
+	<button id="submitTicketDelete" type="button">Submit</button>
 	</form>
 </div>
 <div class="container holder-box">
@@ -72,10 +76,33 @@
 	
 </div>
     </section>
+    <input type="hidden" th:value="${numOfTickets}" id="numOfTickets">
 
 
 <footer th:replace="partials/fragments :: footer"></footer>
 <script th:replace="partials/fragments :: scripts" ></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script>
+	$("#submitTicketDelete").click(() => {
+		if (isNaN($("#ticketDelete").val())) {
+			alert("Please enter a valid number")
+		} else if (parseInt($("#numOfTickets").val()) < parseInt($("#ticketDelete").val())) {
+			alert("You can not delete more tickets than you have")
+		} else {
+			let resp = confirm("You currently have " + $("#numOfTickets").val() + " tickets.\nAre you sure you want to delete " + $("#ticketDelete").val() + " tickets?");
+			if (resp) {
+				$("#refundForm").submit();
+			}
+			
+		}
+		
+	});
+
+
+</script>
 
 </body>
-</html>
+</html> 

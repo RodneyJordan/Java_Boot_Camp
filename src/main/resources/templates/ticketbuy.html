@@ -14,31 +14,35 @@
 				<div class="col-lg-12">
 					<h2 align="center">Reserve Tickets</h2>
 				</div>
+				<th:block th:if="${numToShow >= 1}">
 				<div class="row">
 					<div class="col">
 						Max of 10 tickets per user
 						<form th:action="@{/ticketbuy}" method="POST">
 						 <div class="form-group login-form">
-							<select class="form-group" name="ticket_add_sub">
-								<option value= 1>1</option>
-								<option value= 2>2</option>
-								<option value= 3>3</option>
-								<option value= 4>4</option>
-								<option value= 5>5</option>
-								<option value= 6>6</option>
-								<option value= 7>7</option>
-								<option value= 8>8</option>
-								<option value= 9>9</option>
-								<option value= 10>10</option>
-								<input type="submit" value="reserve">
+							<select class="form-group" name="ticket_add_sub" id="ticketSelect">
+								<option th:if="${numToShow >= 1}" value= 1>1</option>
+								<option th:if="${numToShow >= 2}"  value= 2>2</option>
+								<option th:if="${numToShow >= 3}"  value= 3>3</option>
+								<option th:if="${numToShow >= 4}"  value= 4>4</option>
+								<option th:if="${numToShow >= 5}"  value= 5>5</option>
+								<option th:if="${numToShow >= 6}"  value= 6>6</option>
+								<option th:if="${numToShow >= 7}"  value= 7>7</option>
+								<option th:if="${numToShow >= 8}"  value= 8>8</option>
+								<option th:if="${numToShow >= 9}"  value= 9>9</option>
+								<option th:if="${numToShow >= 10}"  value= 10>10</option>
 							</select>
+							<button type="submit" id="ticketBtn">Reserve</button>
 							</div>
 						</form>
 					</div>
 				</div>
+				</th:block>
+				<h1 th:if="${numToShow <= 0}">You have already maxed out on tickets</h1>
 			</div>
 		</div>
 <footer th:replace="partials/fragments :: footer"></footer>
 <script th:replace="partials/fragments :: scripts" ></script>
+
 </body>
 </html>

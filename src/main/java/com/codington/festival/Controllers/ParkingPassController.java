@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codington.festival.Models.ParkingPass;
 import com.codington.festival.Models.User;
@@ -43,7 +44,16 @@ public class ParkingPassController {
 				}
 				return "buyParkingPass";
 			} 
+	    
+	    @PostMapping("/deleteParkingPass")
+	    public String getParkingInfo(@RequestParam(name="deletePlate") String plateToDelete) {
+	    	System.out.println("plateTODelete: " + plateToDelete);
+			parkingRepo.deletePlate(plateToDelete);
+			return "redirect:/profile";
+			} 
 		
+		
+
 	   
 	
 	
