@@ -3,18 +3,17 @@ package com.codington.festival.Models;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "parkingpass")
+@Table(name = "parking_passes")
 public class ParkingPass {
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	@Id @GeneratedValue
+	private long id;
 	
-	@Column(name = "LicensePlate", nullable = false, unique = true)
+	@Column(name = "license_plate", nullable = false, unique = true)
 	private String plate;
 	
-	@OneToOne
-//	@JoinColumn(name = "user_id")
-    @MapsId
+	@ManyToOne
+	@JoinColumn(name = "user_id")
 	private User user;
 
 	public User getUser() {
@@ -25,7 +24,7 @@ public class ParkingPass {
 		this.user = user;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

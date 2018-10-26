@@ -24,6 +24,38 @@ public class Vendor {
 	
 	@Column(name = "URL", nullable = false, unique = true)
 	private String url;
+	
+	private boolean approved;
+		
+
+	public boolean isApproved() {
+		return approved;
+	}
+
+	public void setApproved(boolean approved) {
+		this.approved = approved;
+	}
+
+	public Vendor() {
+		super();
+	}
+
+	public Vendor(String name, String email, String phone, String url) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.url = url;
+	}
+
+	public Vendor(String name, String email, String phone, String url, boolean approved) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.url = url;
+		this.approved = approved;
+	}
 
 	public int getId() {
 		return id;

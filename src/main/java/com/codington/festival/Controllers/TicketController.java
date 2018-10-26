@@ -16,24 +16,32 @@ import com.codington.festival.Models.Ticket;
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.TicketRepository;
 import com.codington.festival.Repositories.Users;
+import com.codington.festival.services.UserService;
 
 @Controller
 public class TicketController {
 	
 	private TicketRepository ticketRepo;
 	private Users userRepo;
+	private UserService userSvc;
 	
-	public TicketController(TicketRepository ticketRepo, Users userRepo) {
+	public TicketController(TicketRepository ticketRepo, Users userRepo, UserService userSvc) {
 		this.ticketRepo = ticketRepo;
 		this.userRepo = userRepo;
+		this.userSvc = userSvc;
 	}
 	
 
 	@GetMapping("/ticketbuy")
 	public String showBuyTickets(Model model) {
+		if(!userSvc.isLoggedIn()) {
+			return "redirect:login";
+		}
 		model.addAttribute("user", (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 		return "ticketbuy";
 	}
+	
+	
 	
 
 	@PostMapping("/ticketbuy")
@@ -72,10 +80,9 @@ public class TicketController {
 		} else {
 			List<BigInteger> idsToDelete = ticketRepo.getTicketIds(currentUser.getId(), ticketsToDelete);
 			idsToDelete.forEach(t -> ticketRepo.deleteTicket(t));
-			model.addAttribute("numDeleted", tickets);
 		}
 		
-		return "profile";
+		return "redirect:/profile";
 	}
 	
 	
