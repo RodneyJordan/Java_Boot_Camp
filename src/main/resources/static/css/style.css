@@ -19,6 +19,10 @@ header{
 	top:50%;
 }
 
+.list-group-item{
+	width:60%;
+	margin:0 auto;
+}
 .card{
 	margin-bottom:3%;
 }
