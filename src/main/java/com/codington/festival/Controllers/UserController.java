@@ -38,6 +38,7 @@ public class UserController {
     	return "index";
     }
 
+    
     @GetMapping("/register")
     public String showSignupForm(Model model){
         model.addAttribute("user", new User());
@@ -65,6 +66,11 @@ public class UserController {
     @GetMapping("/contact")
     public String showContactPage() {
     	return "contact";
+    }
+    
+    @GetMapping("/faq")
+    public String showFaqPage() {
+    	return "faq";
     }
     
     

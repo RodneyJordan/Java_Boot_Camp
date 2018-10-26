@@ -19,6 +19,10 @@ header{
 	top:50%;
 }
 
+.card{
+	margin-bottom:3%;
+}
+
 .headingText{
 	font-size:60px;
 	animation: blinker 1s linear infinite;
