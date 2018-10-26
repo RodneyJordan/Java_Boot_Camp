@@ -31,7 +31,7 @@
 	<form>
 		<div class="row">
 			<div class="col">
-				<p style="text-align:center">You have <span th:text="${tickets}"></span> of tickets available</p>		
+				<p style="text-align:center">You have <span th:text="${numOfTickets}"></span> tickets reserved</p>		
 			</div>
 		</div>	
 		<div class="row">
@@ -52,6 +52,9 @@
 			<p><span>Ticket ID: </span><span th:text="${ticket.ticketNum}"></span></p>			
 		</div>
 	</div>
+</div>
+<div>
+	<h1>Amount of parking passes <span th:text="${numOfParking}"></span></h1>
 </div>
 <div>
 	<form th:action="@{/refundTickets}" th:method="post">

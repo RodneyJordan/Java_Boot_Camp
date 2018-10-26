@@ -80,10 +80,9 @@ public class TicketController {
 		} else {
 			List<BigInteger> idsToDelete = ticketRepo.getTicketIds(currentUser.getId(), ticketsToDelete);
 			idsToDelete.forEach(t -> ticketRepo.deleteTicket(t));
-			model.addAttribute("numDeleted", tickets);
 		}
 		
-		return "profile";
+		return "redirect:/profile";
 	}
 	
 	
