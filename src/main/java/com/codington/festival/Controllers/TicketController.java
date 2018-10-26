@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.codington.festival.Models.ParkingPass;
 import com.codington.festival.Models.Ticket;
 import com.codington.festival.Models.User;
 import com.codington.festival.Repositories.TicketRepository;
@@ -37,12 +38,14 @@ public class TicketController {
 		if(!userSvc.isLoggedIn()) {
 			return "redirect:login";
 		}
+		model.addAttribute("parkingPass", new ParkingPass());
 		User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		model.addAttribute("user", (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 		int numOfTickets = ticketRepo.getTicketsPerUser(currentUser.getId());
 		model.addAttribute("numToShow", (10 - numOfTickets));
 		return "ticketbuy";
 	}
+	
 	
 	
 	
