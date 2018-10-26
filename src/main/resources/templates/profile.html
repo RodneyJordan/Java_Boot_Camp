@@ -2,8 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/fragments :: head"> </head>
 <body>
-<nav th:replace="partials/fragments :: navbar"></nav>"
-		
+<nav th:replace="partials/fragments :: navbar"></nav>"	
     <section>
         <div class="container">
 	<div class="row">
@@ -73,11 +72,19 @@
 		</div>
 	</div>
 </div>
-	
+
+<form th:action="@{/volunteerbox}" th:method="post">
+	<button th:if="${volunteer == false}" type="submit">Do you want to Volunteer?
+</form>
+<form th:action="@{/volunteerbox}" th:method="post">
+	<button th:if="${volunteer == true}" type="submit">Do you want cancel Volunteer status?
+</form>
 </div>
     </section>
     <input type="hidden" th:value="${numOfTickets}" id="numOfTickets">
 
+
+</main>
 
 <footer th:replace="partials/fragments :: footer"></footer>
 <script th:replace="partials/fragments :: scripts" ></script>

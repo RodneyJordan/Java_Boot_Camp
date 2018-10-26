@@ -6,22 +6,12 @@
 <nav th:replace="partials/fragments :: navbar"></nav>"
 
 
-
-
+<main>
+                    
 	<div class="container">
-	
-	<h1 class="text-center" style="color:orange;">New Codington Festival Events!</h1>
-	
-		<div class="jumbotron">
-			<div class="row">
-			<div class="col-lg-12">
-			
-			</div>
-				<div class="col-lg-6">
-					<img class="img-responsive"  src="../img/trashriver.jpg"/>
-				</div>
-					<div class="col-lg-6">
-						<h1>About</h1>
+				 <div class="row">
+					<div class="col-lg-6" style="color:white;">
+						<h1><u>About</u></h1>
 						<p>
 						Welcome to the First Annual New Codington Festival! The New Codington Festival is a celebration of the union between 
 						the two cities of Southtown and Northtown, guaranteed fun to be had over the New Codington River (formerly 
@@ -30,17 +20,20 @@
 						</p>
 					
 						<p>
-						Along with reserving you ticket for this historic event, you are encouraged (but not obligated) to provide a 
+						Along with reserving your ticket for this historic event, you are encouraged (but not obligated) to provide a 
 						small donation to help provide for the city's new transition, funds raised will go to different local projects 
 						like stimulating local businesses and cleaning up our beloved river. So please give from your heart and enjoy the 
 						Festival!  
 						</p>
-						<a href="#">Sign up to be a volunteer</a>
 					</div>
-				</div>
-			</div>
+					
+					<div class="col-lg-6">
+					<h1 style="color:white;">Mayor Hiccup's Tweets!</h1>
+						<a class="twitter-timeline" href="https://twitter.com/CodingtonAlive?ref_src=twsrc%5Etfw" data-height="300">Tweets by CodingtonAlive</a> 
+					</div>
 		
-		
+							
+		<hr />
 		
 			<div class="jumbotron">
 				<div class="row">
@@ -119,17 +112,100 @@
 			</div>
 			
 			
-			<div class="row">
 				<div class="col-lg-12 text-center">
-					<button class="btn btn-success">Become a vendor</button>
-					<button class="btn btn-success">Become a sponsor</button>			
+						<a align="center" href="#"><button class="btn btn-success">Become a volunteer</button></a>
+						<button  align="center" class="btn btn-success" data-toggle="modal" data-target="#myModalVendor">Become a vendor</button>
+						<button  align="center" class="btn btn-success" data-toggle="modal" data-target="#myModalSponsor">Become a sponsor</button>
+														
 				</div>
-				</div>
+			</div>
+		</div>
+
+				
+</main>	
+
+				
+					<div class="modal" id="myModalVendor">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					
+					      <!-- Modal Header -->
+					      <div class="modal-header">
+					        <h4 class="modal-title">Become A Vendor</h4>
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					      </div>
+					
+					      <!-- Modal body -->
+					      <div class="modal-body">
+					        <form th:action="@{/vendors}" method="POST" name="vendor_form">
+								<label for="vendor_form">Vendor Name:
+									<input type="text" name = "name" />
+								</label>
+								<label for="vendor_form">Vendor Email:
+									<input type="text" name = "email" />
+								</label>
+								<label for="vendor_form">Vendor Phone:
+									<input type="text" name = "phone" />
+								</label>
+								<label for="vendor_form">Vendor URL:
+									<input type="text" name = "url" />
+								</label><br>
+								<button>Submit</button>
+							</form>
+					      </div>
+					
+					      <!-- Modal footer -->
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>	
+					
+					
+						<div class="modal" id="myModalSponsor">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						
+						      <!-- Modal Header -->
+						      <div class="modal-header">
+						        <h4 class="modal-title">Become A Sponsor</h4>
+						        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						      </div>
+						
+						      <!-- Modal body -->
+						      <div class="modal-body">
+						        <form action="https://formspree.io/swantiffany.williams@accenturefederal.com" method="POST">
+									<label for="sponsor_form">Company Name:
+										<input type="text" name="company_name"/>
+									</label>
+									<label for="sponsor_form">Sponsorship Amount:
+										<input type="text" name="amount"/>
+									</label>
+									<label for="sponsor_form">Contact Name:
+										<input type="text" name="contact_name"/>
+									</label>
+									<label for="sponsor_form">Contact Number:
+										<input type="text" name="contact_phone"/>
+									</label><br>
+									<button>Submit</button>
+								</form>
+						      </div>
+						
+						      <!-- Modal footer -->
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						      </div>
+						    </div>
+						</div>
+					</div>				
 			
-			
+
 			
 
 <footer th:replace="partials/fragments :: footer"></footer>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <script th:replace="partials/fragments :: scripts" ></script>
 </body>
 </html>

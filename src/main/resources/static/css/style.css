@@ -3,7 +3,6 @@
 body, html {
     height: 100%;
     margin: 0;
-    margin-top:20px;
 }
 
 
@@ -16,6 +15,12 @@ body{
 header{
 	color:white;
 	font-family:Titillium Web;
+	position:absolute;
+	top:50%;
+}
+
+.card{
+	margin-bottom:3%;
 }
 
 .headingText{
@@ -40,16 +45,8 @@ header{
 	color:white;
 	margin-top:5%;
 }
-.carousel-inner > .item > img {
-  width:500px;
-  height:500px;
-}
 
-.carousel {
-  width:500px;
-  height:400px;
-  margin:0 auto;
-}
+
 
 footer{
 	margin-top:5%;
@@ -61,3 +58,39 @@ footer{
 	margin-top:15%;
 	color:white;
 	}
+
+
+
+.bg-red{
+	background:#e84118;'
+}	
+
+p{
+	text-align:justify;
+}
+
+
+main{
+	margin-top:4%
+}
+
+
+.enterBtn {
+  display: inline-block
+}
+
+
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#enterBtn{
+	position:absolute;
+}
+
+h1.carouselText{
+	font-size:100px;
+	text-shadow: 4px 4px 9px rgba(150, 150, 150, 1);
+}
