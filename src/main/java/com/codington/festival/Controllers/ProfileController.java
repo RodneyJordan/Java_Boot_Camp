@@ -43,9 +43,15 @@ public class ProfileController {
 	@PostMapping("/volunteerbox")
 	public String volunSwitch(@ModelAttribute User user) {
 		if(user.getVolunteer()) {
+			System.out.println(user.getVolunteer());
 			user.setVolunteer(false);
+			System.out.println(user.getVolunteer());
+
 		}else {
+			System.out.println(user.getVolunteer());
 			user.setVolunteer(false);
+			System.out.println(user.getVolunteer());
+
 		}
 		return "profile";
 	}
