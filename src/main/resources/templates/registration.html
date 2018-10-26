@@ -3,10 +3,14 @@
 <head th:replace="partials/fragments :: head"> </head>
 <body>
 
+
+
+
 <nav th:replace="partials/fragments :: navbar"></nav>"
 
-
+<main>
 		
+
 <div class="container">
 	<div class="col-lg-12 text-center">
 		<div class="form-group login-form">
@@ -42,10 +46,10 @@
 			  <a th:href="@{/login}">Already have an account?	</a>
 			  
 			</form>
+
 		</div>
 	</div>
-</div>
-
+</main>
 <footer th:replace="partials/fragments :: footer"></footer>
 <script th:replace="partials/fragments :: scripts" ></script>
 
