@@ -139,13 +139,13 @@
 									<input type="text" name = "name" />
 								</label>
 								<label for="vendor_form">Vendor Email:
-									<input type="text" name = "email"/>
+									<input type="text" name = "email" />
 								</label>
 								<label for="vendor_form">Vendor Phone:
-									<input type="text" name = "phone"/>
+									<input type="text" name = "phone" />
 								</label>
 								<label for="vendor_form">Vendor URL:
-									<input type="text" name = "url"/>
+									<input type="text" name = "url" />
 								</label><br>
 								<button>Submit</button>
 							</form>
@@ -158,7 +158,43 @@
 					    </div>
 					  </div>
 					</div>	
-					<button class="btn btn-success">Become a sponsor</button>			
+					<button class="btn btn-success">Become a sponsor</button>
+										<div class="modal" id="myModalSponsor">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					
+					      <!-- Modal Header -->
+					      <div class="modal-header">
+					        <h4 class="modal-title">Become A Sponsor</h4>
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					      </div>
+					
+					      <!-- Modal body -->
+					      <div class="modal-body">
+					        <form action="https://formspree.io/rodger.e.scott@accenturefederal.com" method="POST" name="sponsor_form">
+								<label for="sponsor_form">Company Name:
+									<input type="text" />
+								</label>
+								<label for="sponsor_form">Sponsorship Amount:
+									<input type="text" />
+								</label>
+								<label for="sponsor_form">Contact Name:
+									<input type="text" />
+								</label>
+								<label for="sponsor_form">Contact Number:
+									<input type="text" />
+								</label><br>
+								<button>Submit</button>
+							</form>
+					      </div>
+					
+					      <!-- Modal footer -->
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>				
 				</div>
 			</div>
 			
