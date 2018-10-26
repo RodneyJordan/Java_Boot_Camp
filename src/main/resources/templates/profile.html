@@ -3,52 +3,69 @@
 <head th:replace="partials/fragments :: head"> </head>
 <body>
 <nav th:replace="partials/fragments :: navbar"></nav>"	
-    <section>
-        <div class="container">
-	<div class="row">
-		<div class="col">
-			<h1>Welcome, <span th:text="${name}"></span>!</h1>
+
+<main>
+
+<div class="container">
+
+  
+	<div class="row text-center" style="color:white;">
+		<div class="col-lg-12 text-center">
+			<h2 style="color:orange;">Welcome, <span th:text="${name}"></span>!</h2>
 		</div>
 	</div>
+<div class="text-center">
+		<form th:action="@{/volunteerbox}" th:method="post">
+			<button class="btn btn-success" th:if="${volunteer == false}" type="submit">I want to volunteer?
+		</form>
+		<form th:action="@{/volunteerbox}" th:method="post">
+			<button class="btn btn-danger" th:if="${volunteer == true}" type="submit">I don't want to volunteer?
+		</form>
 </div>
 
 
-
-
-<div class="container holder-box" id="add_tickets">
+<div id="add_tickets">
 	<div class="row">
-		<div class="col">
-			<h2>My Tickets</h2>		
-		</div>
-	</div>
-	<form>
-		<div class="row">
-			<div class="col">
-				<p style="text-align:center">You have <span th:text="${numOfTickets}"></span> tickets reserved</p>		
-			</div>
-		</div>	
-		<div class="row">
-			<div class="mx-auto">
-				<a th:href="@{/ticketbuy}"><button type="button" class="btn btn-outline-primary">Add Ticket</button></a>	
-			</div>
-		</div>
-		<div>
-			<div class="row">
-				<div class="mx-auto">
-					<button type="button" class="btn btn-outline-primary text-center">Remove Ticket</button>
+		<div class="col-lg-12 text-center">
+			<h1 style="color:white;">My Tickets</h1>	
+				<div class="row text-center">
+					<div class="col-lg-12">
+						<a th:href="@{/ticketbuy}"><button type="button" class="btn btn-success">Add Ticket</button></a>	
+					</div>
 				</div>
-			</div>
 		</div>
-	</form>
-	<div class="row" th:each="ticket : ${showTickets}">
-		<div class="col">	
-			<p><span>Ticket ID: </span><span th:text="${ticket.ticketNum}"></span></p>			
-		</div>
-	</div>
+</div>
+<br />
+		
+	
+<ul class="list-group" th:each="ticket : ${showTickets}">	
+	<li class="list-group-item"><span>Ticket ID: </span><span th:text="${ticket.ticketNum}"></span></li>	
+	<br />		
+</ul>
+
+
+
+
+<form th:if="${hasTickets}" class="form-group login-form" th:action="@{/refundTickets}" id="refundForm" th:method="post">
+					<h1 style="text-align:center;">Delete tickets?</h1>
+					<div class="input-group">
+					<input placeholder="number of tickets to delete" class="form-control" type="text" id="ticketDelete" name="numOfTickets" />
+					<div class="input-group-prepend">
+					<button class="btn btn-danger"  id="submitTicketDelete" type="button">Submit</button>
+					</div>
+					</div>
+</form>	
+	
+	
+
+		
+	
+	
 </div>
 <div>
-	<h1>Amount of parking passes registered: <span th:text="${numOfParking}"></span></h1>
+	<h1 class="text-center" style="color:white;">My Parking Passes</h1>
 </div>
+
 <div th:each="plate: ${platesRegistered}">
 	<form th:action="@{/deleteParkingPass}" th:method="post">
 		<p>Plate Registered: <span th:text="${plate}"></span> 
@@ -58,30 +75,19 @@
 </div>
 
 <div>
-	<form th:action="@{/refundTickets}" id="refundForm" th:method="post">
-	<p>How many tickets would you like to delete?</p>
-	<input type="text" id="ticketDelete" name="numOfTickets" />
-	<button id="submitTicketDelete" type="button">Submit</button>
-	</form>
+
 </div>
-<div class="container holder-box">
-	<div class="row">
-		<div class="col">
-			<h2>Parking Passes</h2>	
-				<a href="#"><button class="btn btn-outline-primary">Buy Parking Pass</button></a>		
+
+	<div class="row text-center">
+		<div class="col-lg-12">
+				<a href="#"><button class="btn btn-success">Buy Parking Pass</button></a>		
 		</div>
 	</div>
 </div>
 
-<form th:action="@{/volunteerbox}" th:method="post">
-	<button th:if="${volunteer == false}" type="submit">Do you want to Volunteer?
-</form>
-<form th:action="@{/volunteerbox}" th:method="post">
-	<button th:if="${volunteer == true}" type="submit">Do you want cancel Volunteer status?
-</form>
+
 </div>
     </section>
-    <input type="hidden" th:value="${numOfTickets}" id="numOfTickets">
 
 
 </main>
