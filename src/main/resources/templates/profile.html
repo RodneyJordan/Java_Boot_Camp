@@ -100,7 +100,9 @@
   crossorigin="anonymous"></script>
 <script>
 	$("#submitTicketDelete").click(() => {
-		if (isNaN($("#ticketDelete").val())) {
+		if ($("#ticketDelete").val() == "") {
+			alert("Empty Fields")
+		} else if (isNaN($("#ticketDelete").val())) {
 			alert("Please enter a valid number")
 		} else if (parseInt($("#numOfTickets").val()) < parseInt($("#ticketDelete").val())) {
 			alert("You can not delete more tickets than you have")
